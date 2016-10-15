@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2016-10-15 10:13:51.513222 UTC
+2016-10-15 10:42:20.415546 UTC
 
 interface main@main:Main 8001
-  interface hash: 121d47fffc50349c13d2645e42129566
-  ABI hash: b5c1d2214eaf34f8ec78feb9a4fa7f79
+  interface hash: 3cff8cf0390cd0ed92fa9ec4759dad8c
+  ABI hash: be10753d4bcf9805d4a2893d3e42932c
   export-list hash: 4edb1e35dfcc6f8eaaa9140af269ff1f
   orphan hash: adf38fb84d3289239c1782671f54a4f2
   flag hash: 1d5ae373ead6ea89e2b573c720a08da9
@@ -169,7 +169,6 @@ import  -/  base-4.9.0.0:GHC.List 13d2451194c1c6e53b4f4f07947736dd
 import  -/  base-4.9.0.0:GHC.Show 952347a6ab730bcb25c0854d8bc6ca51
 import  -/  base-4.9.0.0:Prelude b9bddb97799837fe67a8d00939a5b6c3
 import  -/  boundingboxes-0.2.3@boundingboxes-0.2.3-B5Lpk0UgQX9FW4DN0qgVnk:Data.BoundingBox eb7472d85f9034918394f129e5953c2f
-import  -/  colors-0.3.0.2@colors-0.3.0.2-AvkeI2ZeqYcBVc35VrD0W6:Data.Color.Names 34e06a389cdd70f858857a0b44655072
 import  -/  containers-0.5.7.1@containers-0.5.7.1-Ha3qpRxMQ6UJleQLCYcCoM:Data.Map 0d58213e348c347f293320a2da4174e1
 import  -/  containers-0.5.7.1@containers-0.5.7.1-Ha3qpRxMQ6UJleQLCYcCoM:Data.Map.Base aa779da3873adb5152d8331e38c5c17f
 import  -/  free-game-1.1.90@free-game-1.1.90-Ic1poE82j1wINymiLed5pB:FreeGame 422a6c8886d90efb38586a0d8b0a56b6
@@ -460,13 +459,14 @@ d6831ef04cb9301b090dfae6f7bb7ec7
     -> Data.Map.Base.Map Cards.Card a1
     -> Data.Map.Base.Map Cards.Card a1
   {- Arity: 4, Strictness: <L,U(U)><L,U><L,U><S,1*U>, Inline: [0] -}
-2f70b9b008316f598c7b4282e1f99a91
+11363cfd8014fc80fee8219a53401431
   $wupdate ::
     [Cards.Card]
     -> Data.Map.Base.Map Cards.Card FreeGame.Data.Bitmap.Bitmap
+    -> FreeGame.Data.Bitmap.Bitmap
     -> Control.Monad.Trans.Iter.IterT
          (Control.Monad.Free.Church.F FreeGame.UI.UI) ()
-  {- Arity: 2, Strictness: <L,U><L,U>, Inline: [0] -}
+  {- Arity: 3, Strictness: <L,U><L,U><L,U>, Inline: [0] -}
 5f8cc19ecfd85758d8ecaaf784182639
   add0str :: GHC.Base.String -> GHC.Base.String
   {- Arity: 1, HasNoCafRefs, Strictness: <S,U>,
@@ -478,14 +478,14 @@ d6831ef04cb9301b090dfae6f7bb7ec7
 0854d3518803f6000f9dca6fe4880c96
   add0str1 :: GHC.Types.Char
   {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.C# '0'#) -}
-663de51932829f298af4ac205a17ba9f
+f0382ec7670b59355dee88c83be36b9c
   main :: GHC.Types.IO (GHC.Base.Maybe ())
   {- Arity: 1, Strictness: <S,U>,
      Unfolding: InlineRule (0, True, True)
                 Main.main1
                   `cast`
                 (Sym (GHC.Types.N:IO[0] <GHC.Base.Maybe ()>_R)) -}
-2863bd9adde289528c9f16c2c463124d
+bca59da563ef1ec45ce36a33edcf59b9
   main1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, GHC.Base.Maybe () #)
@@ -503,16 +503,6 @@ d6831ef04cb9301b090dfae6f7bb7ec7
                         System.Random.newStdGen2
                         s of ds1 { (#,#) ipv ipv1 ->
                  case ipv1 of b1 { System.Random.StdGen ipv2 ipv3 ->
-                 let {
-                   lvl41 :: [Cards.Card]
-                   = Data.OldList.sortBy
-                       @ Cards.Card
-                       Cards.$fOrdCard_$ccompare
-                       (GHC.List.$wunsafeTake
-                          @ Cards.Card
-                          5#
-                          (Cards.shuffleCard Cards.allCards b1))
-                 } in
                  FreeGame.Backend.GLFW.$wrunGame
                    @ ()
                    FreeGame.Types.Windowed
@@ -521,74 +511,44 @@ d6831ef04cb9301b090dfae6f7bb7ec7
                    1200.0##
                    800.0##
                    (let {
-                      $wk :: forall r.
-                             (Data.Either.Either
-                                ()
-                                (Control.Monad.Trans.Iter.IterT
-                                   (Control.Monad.Free.Church.F FreeGame.UI.UI) ())
-                              -> r)
-                             -> (FreeGame.UI.UI r -> r) -> r
-                        {- Arity: 2, Strictness: <L,U><L,U>, Inline: [0] -}
-                      = \ @ r
-                          (w :: Data.Either.Either
-                                  ()
-                                  (Control.Monad.Trans.Iter.IterT
-                                     (Control.Monad.Free.Church.F FreeGame.UI.UI) ())
-                                -> r)[OneShot]
-                          (w1 :: FreeGame.UI.UI r -> r)[OneShot] ->
-                        let {
-                          lvl42 :: [FreeGame.Data.Bitmap.Bitmap] -> FreeGame.UI.Game ()
-                            {- Arity: 1, Strictness: <L,1*U> -}
-                          = \ (cards :: [FreeGame.Data.Bitmap.Bitmap]) ->
+                      lvl23 :: [Cards.Card]
+                      = Data.OldList.sortBy
+                          @ Cards.Card
+                          Cards.$fOrdCard_$ccompare
+                          (GHC.List.$wunsafeTake
+                             @ Cards.Card
+                             5#
+                             (Cards.shuffleCard Cards.allCards b1))
+                    } in
+                    let {
+                      lvl24 :: FreeGame.Data.Bitmap.Bitmap
+                               -> forall r.
+                                  (Data.Either.Either
+                                     ()
+                                     (Control.Monad.Trans.Iter.IterT
+                                        (Control.Monad.Free.Church.F FreeGame.UI.UI) ())
+                                   -> r)
+                                  -> (FreeGame.UI.UI r -> r) -> r
+                        {- Arity: 3 -}
+                      = \ (back :: FreeGame.Data.Bitmap.Bitmap)
+                          @ r
+                          (eta1 :: Data.Either.Either
+                                     ()
+                                     (Control.Monad.Trans.Iter.IterT
+                                        (Control.Monad.Free.Church.F FreeGame.UI.UI) ())
+                                   -> r)[OneShot]
+                          (eta2 :: FreeGame.UI.UI r -> r)[OneShot] ->
+                        (Main.$s$fAlternativeIterT_$c>>=
+                           @ [FreeGame.Data.Bitmap.Bitmap]
+                           @ ()
+                           Main.main7
+                           (\ (cards :: [FreeGame.Data.Bitmap.Bitmap]) ->
                             Main.$wupdate
-                              lvl41
+                              lvl23
                               (Main.$sfromList
                                  @ FreeGame.Data.Bitmap.Bitmap
-                                 (Cards.tupleCards cards Cards.Clover Main.main22))
-                        } in
-                        (Main.$s$fAlternativeIterT_$c>>=
-                           @ FreeGame.Data.Bitmap.Bitmap
-                           @ ()
-                           Main.main20
-                           (\ (c1 :: FreeGame.Data.Bitmap.Bitmap)
-                              @ r1
-                              (eta1 :: Data.Either.Either
-                                         ()
-                                         (Control.Monad.Trans.Iter.IterT
-                                            (Control.Monad.Free.Church.F FreeGame.UI.UI) ())
-                                       -> r1)[OneShot]
-                              (eta2 :: FreeGame.UI.UI r1 -> r1)[OneShot] ->
-                            (Main.$s$fAlternativeIterT_$c>>=
-                               @ [FreeGame.Data.Bitmap.Bitmap]
-                               @ ()
-                               Main.main6
-                               lvl42)
-                              `cast`
-                            (Trans
-                                 (Control.Monad.Trans.Iter.N:IterT[0]
-                                      <Control.Monad.Free.Church.F FreeGame.UI.UI>_N <()>_N)
-                                 (Control.Monad.Free.Church.N:F[0]
-                                      <FreeGame.UI.UI>_R
-                                      <Data.Either.Either
-                                         ()
-                                         (Control.Monad.Trans.Iter.IterT
-                                            (Control.Monad.Free.Church.F FreeGame.UI.UI) ())>_R))
-                              @ r1
-                              eta1
-                              eta2)
-                             `cast`
-                           (<FreeGame.Data.Bitmap.Bitmap>_R
-                            ->_R Trans
-                                     (Sym (Control.Monad.Free.Church.N:F[0]
-                                               <FreeGame.UI.UI>_R
-                                               <Data.Either.Either
-                                                  ()
-                                                  (Control.Monad.Trans.Iter.IterT
-                                                     (Control.Monad.Free.Church.F FreeGame.UI.UI)
-                                                     ())>_R))
-                                     (Sym (Control.Monad.Trans.Iter.N:IterT[0]
-                                               <Control.Monad.Free.Church.F FreeGame.UI.UI>_N
-                                               <()>_N))))
+                                 (Cards.tupleCards cards Cards.Clover Main.main6))
+                              back))
                           `cast`
                         (Trans
                              (Control.Monad.Trans.Iter.N:IterT[0]
@@ -600,55 +560,14 @@ d6831ef04cb9301b090dfae6f7bb7ec7
                                      (Control.Monad.Trans.Iter.IterT
                                         (Control.Monad.Free.Church.F FreeGame.UI.UI) ())>_R))
                           @ r
-                          w
-                          w1
-                    } in
-                    let {
-                      k :: FreeGame.Data.Font.Font
-                           -> forall r.
-                              (Data.Either.Either
-                                 ()
-                                 (Control.Monad.Trans.Iter.IterT
-                                    (Control.Monad.Free.Church.F FreeGame.UI.UI) ())
-                               -> r)
-                              -> (FreeGame.UI.UI r -> r) -> r
-                        {- Arity: 3, Strictness: <L,A><L,U><L,U>, Inline: INLINE[0],
-                           Unfolding: InlineRule (3, True, True)
-                                      (\ (w :: FreeGame.Data.Font.Font)
-                                         @ r
-                                         (w1 :: Data.Either.Either
-                                                  ()
-                                                  (Control.Monad.Trans.Iter.IterT
-                                                     (Control.Monad.Free.Church.F FreeGame.UI.UI)
-                                                     ())
-                                                -> r)[OneShot]
-                                         (w2 :: FreeGame.UI.UI r -> r)[OneShot] ->
-                                       $wk @ r w1 w2) -}
-                      = \ (w :: FreeGame.Data.Font.Font)
-                          @ r
-                          (w1 :: Data.Either.Either
-                                   ()
-                                   (Control.Monad.Trans.Iter.IterT
-                                      (Control.Monad.Free.Church.F FreeGame.UI.UI) ())
-                                 -> r)[OneShot]
-                          (w2 :: FreeGame.UI.UI r -> r)[OneShot] ->
-                        $wk @ r w1 w2
+                          eta1
+                          eta2
                     } in
                     Main.$s$fAlternativeIterT_$c>>=
-                      @ ()
+                      @ FreeGame.Data.Font.Font
                       @ ()
                       Main.main4
-                        `cast`
-                      (Trans
-                           (Sym (Control.Monad.Free.Church.N:F[0]
-                                     <FreeGame.UI.UI>_R
-                                     <Data.Either.Either
-                                        ()
-                                        (Control.Monad.Trans.Iter.IterT
-                                           (Control.Monad.Free.Church.F FreeGame.UI.UI) ())>_R))
-                           (Sym (Control.Monad.Trans.Iter.N:IterT[0]
-                                     <Control.Monad.Free.Church.F FreeGame.UI.UI>_N <()>_N)))
-                      (\ (ds :: ())
+                      (\ (font :: FreeGame.Data.Font.Font)
                          @ r
                          (eta1 :: Data.Either.Either
                                     ()
@@ -657,11 +576,12 @@ d6831ef04cb9301b090dfae6f7bb7ec7
                                   -> r)[OneShot]
                          (eta2 :: FreeGame.UI.UI r -> r)[OneShot] ->
                        (Main.$s$fAlternativeIterT_$c>>=
-                          @ FreeGame.Data.Font.Font
+                          @ FreeGame.Data.Bitmap.Bitmap
                           @ ()
                           Main.main2
-                          k `cast`
-                          (<FreeGame.Data.Font.Font>_R
+                          lvl24
+                            `cast`
+                          (<FreeGame.Data.Bitmap.Bitmap>_R
                            ->_R Trans
                                     (Sym (Control.Monad.Free.Church.N:F[0]
                                               <FreeGame.UI.UI>_R
@@ -687,7 +607,7 @@ d6831ef04cb9301b090dfae6f7bb7ec7
                          eta1
                          eta2)
                         `cast`
-                      (<()>_R
+                      (<FreeGame.Data.Font.Font>_R
                        ->_R Trans
                                 (Sym (Control.Monad.Free.Church.N:F[0]
                                           <FreeGame.UI.UI>_R
@@ -699,16 +619,19 @@ d6831ef04cb9301b090dfae6f7bb7ec7
                                 (Sym (Control.Monad.Trans.Iter.N:IterT[0]
                                           <Control.Monad.Free.Church.F FreeGame.UI.UI>_N <()>_N))))
                    ipv } } }) -}
-6744d539d99ac2815c10518f71304c26
+90aa85cedb44c5f0bd82bc9c3cdfb5ac
   main10 :: [GHC.IO.FilePath]
-  {- Unfolding: (Main.main12
-                   Main.main11
+  {- Unfolding: (Main.main13 Main.main18 Main.main11) -}
+016cc529e4ed76ef9c416fbb54467b5f
+  main11 :: [GHC.IO.FilePath]
+  {- Unfolding: (Main.main13
+                   Main.main12
                    (GHC.Types.[] @ GHC.IO.FilePath)) -}
-18dcbfbe3f9569c41ebff49df74f38ab
-  main11 :: [GHC.Types.Char]
+c87e4a100a9db76199299278fe91a0db
+  main12 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "s"#) -}
-c511b1d1039b55d7918e87041a256df4
-  main12 ::
+60d9d17adb66fd9d0ee9d0024b25927b
+  main13 ::
     [GHC.Types.Char] -> [GHC.IO.FilePath] -> [GHC.IO.FilePath]
   {- Arity: 2, Strictness: <L,U><L,U>,
      Unfolding: (\ (ds :: [GHC.Types.Char])
@@ -735,63 +658,48 @@ c511b1d1039b55d7918e87041a256df4
                                      s :: GHC.Base.String = GHC.Types.: @ GHC.Types.Char ww3 ww4
                                    } in
                                    case GHC.List.$wlenAcc @ GHC.Types.Char s 0# of ww1 {
-                                     DEFAULT -> GHC.Base.++ @ GHC.Types.Char s Main.main16
+                                     DEFAULT -> GHC.Base.++ @ GHC.Types.Char s Main.main17
                                      1#
                                      -> GHC.Base.++
                                           @ GHC.Types.Char
                                           (GHC.Types.: @ GHC.Types.Char Main.add0str1 s)
-                                          Main.main16 } })))
+                                          Main.main17 } })))
                             (go ys) }
                  } in
-                 go Main.main13) -}
-20b1c113fffdc1db4ecadcdceabf47b8
-  main13 :: [GHC.Integer.Type.Integer]
+                 go Main.main14) -}
+94c6dd819a1f15e024f2a3e03cf3a456
+  main14 :: [GHC.Integer.Type.Integer]
   {- Unfolding: (GHC.Enum.enumDeltaToInteger1
-                   Main.main15
-                   Main.main14) -}
-cd4258693187e203767440c602d5940d
-  main14 :: GHC.Integer.Type.Integer
-  {- HasNoCafRefs, Unfolding: (13) -}
-c97945d47b5efd7e1bd606324cf18772
+                   Main.main16
+                   Main.main15) -}
+2dfa0541fb7aa0ab2b5c277d116220f4
   main15 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (13) -}
+b09ae16fc1a90cf1b4abd5dcae92f72b
+  main16 :: GHC.Integer.Type.Integer
   {- HasNoCafRefs, Unfolding: (1) -}
-db2b2188f96e4a461206ecab802bc3fb
-  main16 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# ".png"#) -}
-9fb65af0b77d801a02829895fe7b1322
+f66ae55778431fa9afa5648dcb7dfbea
   main17 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "h"#) -}
-5896fcbf723fe6a9a4e02440017fdd39
+  {- Unfolding: (GHC.CString.unpackCString# ".png"#) -}
+86ad5d1c79aa8b1ab973f026df2aebd8
   main18 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "d"#) -}
-eb0191dd1bdb981c3c078d9f41f052e9
+  {- Unfolding: (GHC.CString.unpackCString# "h"#) -}
+5a427cf90b11aaf7066d0fd2c177b91d
   main19 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "c"#) -}
-fcc004705917fc764c6723b007a1d68a
+  {- Unfolding: (GHC.CString.unpackCString# "d"#) -}
+5cc28d10e7bb6c35c44c49d6d28858b0
   main2 ::
-    Control.Monad.Trans.Iter.IterT
-      FreeGame.UI.Frame FreeGame.Data.Font.Font
-  {- Unfolding: (FreeGame.Data.Font.loadFontFromFile
-                   @ (Control.Monad.Trans.Iter.IterT FreeGame.UI.Frame)
-                   Main.$s$fMonadIOIterT
-                   Main.main3) -}
-e81e775026a5340241b015b3b21d7c83
-  main20 ::
     Control.Monad.Trans.Iter.IterT
       FreeGame.UI.Frame FreeGame.Data.Bitmap.Bitmap
   {- Unfolding: (FreeGame.Data.Bitmap.readBitmap
                    @ (Control.Monad.Trans.Iter.IterT FreeGame.UI.Frame)
                    Main.$s$fMonadIOIterT
-                   Main.main21) -}
-31a011141b727e1d554db07d5aab7d80
-  main21 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString#
-                   "asset/cards/c01.png"#) -}
-d3d87aa9db8513818d06585d9f9bfff5
-  main22 :: GHC.Types.Int
-  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 1#) -}
-b9be00853c2d47eb305307677b1b6800
-  main23 ::
+                   Main.main3) -}
+1e4daacbe465484b76c992c2691dcde6
+  main20 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "c"#) -}
+c393e7fa55988545a6b308aadef7dd91
+  main21 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, GHC.Base.Maybe () #)
   {- Arity: 1,
@@ -800,88 +708,58 @@ b9be00853c2d47eb305307677b1b6800
                    Main.main1
                      `cast`
                    (Sym (GHC.Types.N:IO[0] <GHC.Base.Maybe ()>_R))) -}
-48972a1d223d58af1c3045a6bcde3d54
+3e4f00eae14964ce4033cc663c5887de
   main3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "asset/back.png"#) -}
+bdd9314028f2b423d7346c671198c6db
+  main4 ::
+    Control.Monad.Trans.Iter.IterT
+      FreeGame.UI.Frame FreeGame.Data.Font.Font
+  {- Unfolding: (FreeGame.Data.Font.loadFontFromFile
+                   @ (Control.Monad.Trans.Iter.IterT FreeGame.UI.Frame)
+                   Main.$s$fMonadIOIterT
+                   Main.main5) -}
+38b7e34ba17e23eb172cd66841137d14
+  main5 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString#
                    "asset/VL-PGothic-Regular.ttf"#) -}
-3f435e5d15ce2180c70a10f7bd048960
-  main4 ::
-    (Data.Either.Either
-       ()
-       (Control.Monad.Trans.Iter.IterT
-          (Control.Monad.Free.Church.F FreeGame.UI.UI) ())
-     -> r)
-    -> (FreeGame.UI.UI r -> r) -> r
-  {- Arity: 2, HasNoCafRefs,
-     Unfolding: (\ @ r
-                   (kp :: Data.Either.Either
-                            ()
-                            (Control.Monad.Trans.Iter.IterT
-                               (Control.Monad.Free.Church.F FreeGame.UI.UI) ())
-                          -> r)
-                   (kf :: FreeGame.UI.UI r -> r)[OneShot] ->
-                 kf (FreeGame.UI.ClearColor @ r Main.main_a1 (kp Main.main5))) -}
-9c783651daa87e7d803596042463f1f3
-  main5 ::
-    Data.Either.Either
-      ()
-      (Control.Monad.Trans.Iter.IterT
-         (Control.Monad.Free.Church.F FreeGame.UI.UI) ())
-  {- HasNoCafRefs,
-     Unfolding: (Data.Either.Left
-                   @ ()
-                   @ (Control.Monad.Trans.Iter.IterT
-                        (Control.Monad.Free.Church.F FreeGame.UI.UI) ())
-                   GHC.Tuple.()) -}
-6f400db25b2d8e1814f3c3cde989f66a
-  main6 ::
+6eb8b1d010496f1486fd276601aca7f7
+  main6 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 1#) -}
+197f1b873176cd06942e4809561f88a0
+  main7 ::
     Control.Monad.Trans.Iter.IterT
       FreeGame.UI.Frame [FreeGame.Data.Bitmap.Bitmap]
-  {- Unfolding: (Main.main_go Main.main7) -}
-313db176e9cde716a9b409f7cee3b5b8
-  main7 :: [GHC.IO.FilePath]
-  {- Unfolding: (Main.main12 Main.main19 Main.main8) -}
-591cdcf656d9266fa5cb24d70d05593c
+  {- Unfolding: (Main.main_go Main.main8) -}
+623dacb9d66bffad3dc5b8037b67d7e6
   main8 :: [GHC.IO.FilePath]
-  {- Unfolding: (Main.main12 Main.main18 Main.main9) -}
-feca456d580b6e64fee7440c2ce921c1
+  {- Unfolding: (Main.main13 Main.main20 Main.main9) -}
+fb22428e86156c3f400061bd69d9203a
   main9 :: [GHC.IO.FilePath]
-  {- Unfolding: (Main.main12 Main.main17 Main.main10) -}
-e1465681235449787272d6b46c37ee49
-  main_a1 :: Data.Color.Color GHC.Types.Float
-  {- HasNoCafRefs, Strictness: m,
-     Unfolding: (Linear.V4.V4
-                   @ GHC.Types.Float
-                   Main.main_dt2
-                   Main.main_dt2
-                   Main.main_dt2
-                   Main.main_dt3) -}
-e7c05d8cc15bcfb314e04abbea877e4b
-  main_dt2 :: GHC.Types.Float
-  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 0.0#) -}
-8364c4f6ed5fad941cf901aee2933d0d
-  main_dt3 :: GHC.Types.Float
-  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 1.0#) -}
+  {- Unfolding: (Main.main13 Main.main19 Main.main10) -}
 143441f123e733d36f0b32b79649cfac
   main_go ::
     [GHC.IO.FilePath]
     -> Control.Monad.Trans.Iter.IterT
          FreeGame.UI.Frame [FreeGame.Data.Bitmap.Bitmap]
   {- Arity: 1, Strictness: <S,1*U> -}
-c4c781bb0018a5e037f84d3b9bc25146
+31644449ff001fddad7cfe4fa11d181c
   update ::
     FreeGame.Data.Font.Font
     -> [Cards.Card]
     -> [FreeGame.Data.Bitmap.Bitmap]
     -> Data.Map.Base.Map Cards.Card FreeGame.Data.Bitmap.Bitmap
+    -> FreeGame.Data.Bitmap.Bitmap
     -> FreeGame.UI.Game ()
-  {- Arity: 4, Strictness: <L,A><L,U><L,A><L,U>, Inline: INLINE[0],
-     Unfolding: InlineRule (4, True, True)
+  {- Arity: 5, Strictness: <L,A><L,U><L,A><L,U><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (5, True, True)
                 (\ (w :: FreeGame.Data.Font.Font)
                    (w1 :: [Cards.Card])
                    (w2 :: [FreeGame.Data.Bitmap.Bitmap])
-                   (w3 :: Data.Map.Base.Map Cards.Card FreeGame.Data.Bitmap.Bitmap) ->
-                 Main.$wupdate w1 w3) -}
+                   (w3 :: Data.Map.Base.Map Cards.Card FreeGame.Data.Bitmap.Bitmap)
+                   (w4 :: FreeGame.Data.Bitmap.Bitmap) ->
+                 Main.$wupdate w1 w3 w4) -}
 "SPEC/Main $fAlternativeIterT_$c>>= @ (F UI)" [ALWAYS] forall ($dMonad :: GHC.Base.Monad
                                                                             (Control.Monad.Free.Church.F
                                                                                FreeGame.UI.UI))

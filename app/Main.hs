@@ -9,14 +9,15 @@ import qualified Data.Map as Map
 import System.Random
 import FreeGame
 
-update :: Font -> [Card] -> [Bitmap] -> Map.Map Card Bitmap -> Game()
-update font myCards cards cardsMap = do
+update :: Font -> [Card] -> [Bitmap] -> Map.Map Card Bitmap -> Bitmap -> Game()
+update font myCards cards cardsMap back = do
+  translate (V2 600 400) $ bitmap back
   -- showCards myCards 100 font
   showPictCards myCards cardsMap 100
 
   tick
   escape <- keyPress KeyEscape
-  unless escape $ update font myCards cards cardsMap
+  unless escape $ update font myCards cards cardsMap back
 
 
 main :: IO (Maybe ())
@@ -24,15 +25,17 @@ main = do
   gen <- newStdGen
 
   runGame Windowed (Box (V2 0 0) (V2 1200 800)) $ do
-    clearColor black
+    -- clearColor $ fromRGB 0.36 0.66 0.29
     font <- loadFont "asset/VL-PGothic-Regular.ttf"
-    c1 <- readBitmap "asset/cards/c01.png"
+    -- c1 <- readBitmap "asset/cards/c01.png"
+    back <- readBitmap "asset/back.png"
     cards <- mapM readBitmap  ["asset/cards/" ++ r ++ n ++ ".png" | r <- ["c","d", "h", "s"], n <- map (add0str . show) [1..13]]
     let cardsMap = Map.fromList $ tupleCards cards Clover 1
 
     let shuffled = shuffleCard allCards gen
 
-    update font (sort (take 5 shuffled)) cards cardsMap
+
+    update font (sort (take 5 shuffled)) cards cardsMap back
 
 add0str :: String -> String
 add0str s
