@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2016-10-15 10:13:50.902526 UTC
+2016-10-30 12:08:22.388383 UTC
 
 interface main@main:Cards 8001
-  interface hash: aca990b35ad89b7d6f24af8a50d532cb
-  ABI hash: 9a3bb8249dc0b65f319c541ef69010ce
-  export-list hash: 73f626470a4ec3743f554a33bdcd6c47
+  interface hash: 10c6b27f416c769601f137d9b587ff4b
+  ABI hash: 3f7aa1f66656703e987cdd6bd0fbd461
+  export-list hash: d1519e401fbcc677cf0d5c58870d86ed
   orphan hash: 906f55c9b55090ee3ac575cd14abe6e4
   flag hash: b61242a7c40cc421f4902b0c8f33bcb2
   sig of: Nothing
@@ -13,6 +13,8 @@ interface main@main:Cards 8001
   where
 exports:
   Cards.allCards
+  Cards.getNum
+  Cards.getRank
   Cards.showCards
   Cards.showPictCards
   Cards.shuffleCard
@@ -1934,6 +1936,18 @@ bdec3de3ccc6da4d57ba288ef9ba6f6a
 bcc620f92877036163c576f9231e1322
   allCards_go :: GHC.Prim.Int# -> [Cards.Card]
   {- Arity: 1, Strictness: <L,U> -}
+592d90629255c689fdd1b86bec3e0f03
+  getNum :: Cards.Card -> GHC.Types.Int
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SL),1*U(1*U(U),A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Cards.Card) ->
+                 case ds of wild { Cards.Card n ds1 -> n }) -}
+b08de5249aa4fa6cd3e141bfa2dc2288
+  getRank :: Cards.Card -> Cards.Rank
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LS),1*U(A,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Cards.Card) ->
+                 case ds of wild { Cards.Card ds1 r -> r }) -}
 6996cf6ce00503d157b70f1652615fb6
   showCardNumber :: GHC.Types.Int -> GHC.Base.String
   {- Arity: 1, Strictness: <S(S),1*U(1*U)>, Inline: INLINE[0],

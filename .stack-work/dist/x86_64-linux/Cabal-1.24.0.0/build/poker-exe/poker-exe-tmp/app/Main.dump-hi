@@ -1,12 +1,12 @@
 
 ==================== FINAL INTERFACE ====================
-2016-10-15 10:42:20.415546 UTC
+2016-10-30 12:09:03.739855 UTC
 
 interface main@main:Main 8001
-  interface hash: 3cff8cf0390cd0ed92fa9ec4759dad8c
-  ABI hash: be10753d4bcf9805d4a2893d3e42932c
-  export-list hash: 4edb1e35dfcc6f8eaaa9140af269ff1f
-  orphan hash: adf38fb84d3289239c1782671f54a4f2
+  interface hash: 68754efbca6c462518a41c8faa2c4182
+  ABI hash: 0f510e715e8730e9b4f7e19c5f611c1c
+  export-list hash: fe736b2c77f0d55ed5fb1b39b317dfbf
+  orphan hash: 3ac70c904a29db606c834b85629fa551
   flag hash: 1d5ae373ead6ea89e2b573c720a08da9
   sig of: Nothing
   used TH splices: False
@@ -15,7 +15,7 @@ exports:
   Main.add0str
   Main.main
   Main.update
-module dependencies: Cards
+module dependencies: Cards Hands
 package dependencies: GLFW-b-1.4.8.1@GLFW-b-1.4.8.1-2oLi8d8Om6j90ytPw2you1
                       GLURaw-2.0.0.2@GLURaw-2.0.0.2-CXqiFREEjzx2h5fh9cccgi
                       JuicyPixels-3.2.8@JuicyPixels-3.2.8-9xVAaSn1ptq1f1nvfTAuq3
@@ -169,28 +169,315 @@ import  -/  base-4.9.0.0:GHC.List 13d2451194c1c6e53b4f4f07947736dd
 import  -/  base-4.9.0.0:GHC.Show 952347a6ab730bcb25c0854d8bc6ca51
 import  -/  base-4.9.0.0:Prelude b9bddb97799837fe67a8d00939a5b6c3
 import  -/  boundingboxes-0.2.3@boundingboxes-0.2.3-B5Lpk0UgQX9FW4DN0qgVnk:Data.BoundingBox eb7472d85f9034918394f129e5953c2f
+import  -/  colors-0.3.0.2@colors-0.3.0.2-AvkeI2ZeqYcBVc35VrD0W6:Data.Color.Names 34e06a389cdd70f858857a0b44655072
 import  -/  containers-0.5.7.1@containers-0.5.7.1-Ha3qpRxMQ6UJleQLCYcCoM:Data.Map 0d58213e348c347f293320a2da4174e1
 import  -/  containers-0.5.7.1@containers-0.5.7.1-Ha3qpRxMQ6UJleQLCYcCoM:Data.Map.Base aa779da3873adb5152d8331e38c5c17f
 import  -/  free-game-1.1.90@free-game-1.1.90-Ic1poE82j1wINymiLed5pB:FreeGame 422a6c8886d90efb38586a0d8b0a56b6
 import  -/  free-game-1.1.90@free-game-1.1.90-Ic1poE82j1wINymiLed5pB:FreeGame.Class 9c829726437c22e4ce2471a3ef9e481d
 import  -/  free-game-1.1.90@free-game-1.1.90-Ic1poE82j1wINymiLed5pB:FreeGame.Data.Bitmap 2133b386e6455619bb70c33c956013aa
 import  -/  free-game-1.1.90@free-game-1.1.90-Ic1poE82j1wINymiLed5pB:FreeGame.Data.Font 67b54171ade9c7f96245d64ea5f4fa40
+import  -/  free-game-1.1.90@free-game-1.1.90-Ic1poE82j1wINymiLed5pB:FreeGame.Text c74675a5640de26f89c6991f644713cd
 import  -/  free-game-1.1.90@free-game-1.1.90-Ic1poE82j1wINymiLed5pB:FreeGame.Types 99a4ef4c051776899396f2308d46e80b
 import  -/  free-game-1.1.90@free-game-1.1.90-Ic1poE82j1wINymiLed5pB:FreeGame.UI 0a12b16f77bebac1e6f0f6ec43ed3b91
 import  -/  free-game-1.1.90@free-game-1.1.90-Ic1poE82j1wINymiLed5pB:FreeGame.Util 1408c732a27dde77904b99db88c46ac0
 import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
 import  -/  ghc-prim-0.5.0.0:GHC.Types 7378e41b7749213c8c88ceb6b0665d4c
 import  -/  linear-1.20.5@linear-1.20.5-4kpNUCVxUq2DOGtNJfuat6:Linear.V2 e33ad0d2afac462e321b5adc0d9c5ea3
-import  -/  Cards 9a3bb8249dc0b65f319c541ef69010ce
-  exports: 73f626470a4ec3743f554a33bdcd6c47
+import  -/  Cards 3f7aa1f66656703e987cdd6bd0fbd461
+  exports: d1519e401fbcc677cf0d5c58870d86ed
   Card 0c68e2144bde33f5725c7745e2ae21ec
   Clover 685a3de32d86f19ed78a7e7547ac9269
   allCards 975a80e28297b5cd28831929f825f777
   showPictCards 02f5313a7f96470830ec6f5171d8d928
   shuffleCard 0c20863990abf2255b310ef254b77b8f
   tupleCards 2480c26874e19ce7d01cb1088d64ec53
+import  -/  Hands cd7563afb27d6b24f8ddc7c449f05715
+  exports: 63321d20311ea0ecbb141c4c4193f529
+  pokerHand 19c8692a2fbdfff1d80560ff19e6da2f
+  toHand e4833d5e78da867e177675099c243f67
 import  -/  poker-0.1.0.0@poker-0.1.0.0-6b4Qq4MUzmfCvWidKCYUPf:Lib 0593fcc5996622f5c520a495651e5517
 import  -/  random-1.1@random-1.1-54KmMHXjttlERYcr1mvsAe:System.Random 12e582ce6a18ca02c107789bb28c509c
+e17f1c361493e2575f04b1bb4ae43d0f
+  $s$fAffineF ::
+    FreeGame.Class.Affine (Control.Monad.Free.Church.F FreeGame.UI.UI)
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (Control.Monad.Free.Church.F FreeGame.UI.UI)
+                  Main.$s$fAffineF_$s$fAffineF_$cp1Affine
+                  Main.$s$fAffineF_$s$fAffineF_$crotateR
+                  Main.$s$fAffineF_$s$fAffineF_$crotateD
+                  Main.$s$fAffineF_$s$fAffineF_$cscale
+                  Main.$s$fAffineF_$s$fAffineF_$ctranslate -}
+f534fdb8e346268b31598dbd52c2575b
+  $s$fAffineF_$s$fAffineF_$cp1Affine ::
+    GHC.Base.Functor (Control.Monad.Free.Church.F FreeGame.UI.UI)
+  {- Strictness: m,
+     Unfolding: InlineRule (0, True, True)
+                (Control.Monad.Free.Church.$fFunctorF @ FreeGame.UI.UI) -}
+b103d5034053851a250cca07ff9d87f0
+  $s$fAffineF_$s$fAffineF_$crotateD ::
+    GHC.Types.Double
+    -> Control.Monad.Free.Church.F FreeGame.UI.UI a
+    -> Control.Monad.Free.Church.F FreeGame.UI.UI a
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <L,U><C(C(S)),1*C1(C1(U))><L,U><L,C(U)>,
+     Inline: INLINE (sat-args=1),
+     Unfolding: InlineRule (1, False, False)
+                (\ @ a
+                   (a5 :: GHC.Types.Double)
+                   (eta1 :: Control.Monad.Free.Church.F FreeGame.UI.UI a)
+                   @ r
+                   (eta2 :: a -> r)
+                   (eta3 :: FreeGame.UI.UI r -> r) ->
+                 (Control.Monad.Free.Church.hoistF
+                    @ FreeGame.UI.UI
+                    @ FreeGame.UI.UI
+                    @ a
+                    (\ @ x -> FreeGame.UI.$fAffineUI_$crotateD @ x a5)
+                    eta1)
+                   `cast`
+                 (Control.Monad.Free.Church.N:F[0] <FreeGame.UI.UI>_R <a>_R)
+                   @ r
+                   eta2
+                   eta3)
+                  `cast`
+                (forall (a :: <*>_N).
+                 <GHC.Types.Double>_R
+                 ->_R <Control.Monad.Free.Church.F FreeGame.UI.UI a>_R
+                 ->_R Sym (Control.Monad.Free.Church.N:F[0]
+                               <FreeGame.UI.UI>_R <a>_R)) -}
+a23cc710a95c51eef1595d9e8593d082
+  $s$fAffineF_$s$fAffineF_$crotateR ::
+    GHC.Types.Double
+    -> Control.Monad.Free.Church.F FreeGame.UI.UI a
+    -> Control.Monad.Free.Church.F FreeGame.UI.UI a
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <L,U><C(C(S)),1*C1(C1(U))><L,U><L,C(U)>,
+     Inline: INLINE (sat-args=1),
+     Unfolding: InlineRule (1, False, False)
+                (\ @ a
+                   (a5 :: GHC.Types.Double)
+                   (eta1 :: Control.Monad.Free.Church.F FreeGame.UI.UI a)
+                   @ r
+                   (eta2 :: a -> r)
+                   (eta3 :: FreeGame.UI.UI r -> r) ->
+                 (Control.Monad.Free.Church.hoistF
+                    @ FreeGame.UI.UI
+                    @ FreeGame.UI.UI
+                    @ a
+                    (\ @ x -> FreeGame.UI.$fAffineUI_$crotateR @ x a5)
+                    eta1)
+                   `cast`
+                 (Control.Monad.Free.Church.N:F[0] <FreeGame.UI.UI>_R <a>_R)
+                   @ r
+                   eta2
+                   eta3)
+                  `cast`
+                (forall (a :: <*>_N).
+                 <GHC.Types.Double>_R
+                 ->_R <Control.Monad.Free.Church.F FreeGame.UI.UI a>_R
+                 ->_R Sym (Control.Monad.Free.Church.N:F[0]
+                               <FreeGame.UI.UI>_R <a>_R)) -}
+ae3556f45a8f0a5150a794d2ff50f4b8
+  $s$fAffineF_$s$fAffineF_$cscale ::
+    FreeGame.Types.Vec2
+    -> Control.Monad.Free.Church.F FreeGame.UI.UI a
+    -> Control.Monad.Free.Church.F FreeGame.UI.UI a
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <L,U><C(C(S)),1*C1(C1(U))><L,U><L,C(U)>,
+     Inline: INLINE (sat-args=1),
+     Unfolding: InlineRule (1, False, False)
+                (\ @ a
+                   (a5 :: FreeGame.Types.Vec2)
+                   (eta1 :: Control.Monad.Free.Church.F FreeGame.UI.UI a)
+                   @ r
+                   (eta2 :: a -> r)
+                   (eta3 :: FreeGame.UI.UI r -> r) ->
+                 (Control.Monad.Free.Church.hoistF
+                    @ FreeGame.UI.UI
+                    @ FreeGame.UI.UI
+                    @ a
+                    (\ @ x -> FreeGame.UI.$fAffineUI_$cscale @ x a5)
+                    eta1)
+                   `cast`
+                 (Control.Monad.Free.Church.N:F[0] <FreeGame.UI.UI>_R <a>_R)
+                   @ r
+                   eta2
+                   eta3)
+                  `cast`
+                (forall (a :: <*>_N).
+                 <FreeGame.Types.Vec2>_R
+                 ->_R <Control.Monad.Free.Church.F FreeGame.UI.UI a>_R
+                 ->_R Sym (Control.Monad.Free.Church.N:F[0]
+                               <FreeGame.UI.UI>_R <a>_R)) -}
+1c44d9672196a6209fa612d499c31b19
+  $s$fAffineF_$s$fAffineF_$ctranslate ::
+    FreeGame.Types.Vec2
+    -> Control.Monad.Free.Church.F FreeGame.UI.UI a
+    -> Control.Monad.Free.Church.F FreeGame.UI.UI a
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <L,U><C(C(S)),1*C1(C1(U))><L,U><L,C(U)>,
+     Inline: INLINE (sat-args=1),
+     Unfolding: InlineRule (1, False, False)
+                (\ @ a
+                   (a5 :: FreeGame.Types.Vec2)
+                   (eta1 :: Control.Monad.Free.Church.F FreeGame.UI.UI a)
+                   @ r
+                   (eta2 :: a -> r)
+                   (eta3 :: FreeGame.UI.UI r -> r) ->
+                 (Control.Monad.Free.Church.hoistF
+                    @ FreeGame.UI.UI
+                    @ FreeGame.UI.UI
+                    @ a
+                    (\ @ x -> FreeGame.UI.$fAffineUI_$ctranslate @ x a5)
+                    eta1)
+                   `cast`
+                 (Control.Monad.Free.Church.N:F[0] <FreeGame.UI.UI>_R <a>_R)
+                   @ r
+                   eta2
+                   eta3)
+                  `cast`
+                (forall (a :: <*>_N).
+                 <FreeGame.Types.Vec2>_R
+                 ->_R <Control.Monad.Free.Church.F FreeGame.UI.UI a>_R
+                 ->_R Sym (Control.Monad.Free.Church.N:F[0]
+                               <FreeGame.UI.UI>_R <a>_R)) -}
+3784105b66ffaf62e8a923c75a7d475f
+  $s$fAffineIterT ::
+    FreeGame.Class.Affine
+      (Control.Monad.Trans.Iter.IterT
+         (Control.Monad.Free.Church.F FreeGame.UI.UI))
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (Control.Monad.Trans.Iter.IterT
+                       (Control.Monad.Free.Church.F FreeGame.UI.UI))
+                  Main.$s$fAffineIterT_$s$fAffineIterT_$cp1Affine
+                  Main.$s$fAffineIterT_$s$fAffineIterT_$crotateR
+                  Main.$s$fAffineIterT_$s$fAffineIterT_$crotateD
+                  Main.$s$fAffineIterT_$s$fAffineIterT_$cscale
+                  Main.$s$fAffineIterT_$s$fAffineIterT_$ctranslate -}
+99760e2c91ca0ce71602cc7c223c5fd3
+  $s$fAffineIterT_$s$fAffineIterT_$cp1Affine ::
+    GHC.Base.Functor
+      (Control.Monad.Trans.Iter.IterT
+         (Control.Monad.Free.Church.F FreeGame.UI.UI))
+  {- Strictness: m,
+     Unfolding: InlineRule (0, True, True)
+                Main.$s$fAffineIterT_$s$fFunctorIterT -}
+75eefbc500fef008cde587a40922cf89
+  $s$fAffineIterT_$s$fAffineIterT_$crotateD ::
+    GHC.Types.Double
+    -> Control.Monad.Trans.Iter.IterT
+         (Control.Monad.Free.Church.F FreeGame.UI.UI) a
+    -> Control.Monad.Trans.Iter.IterT
+         (Control.Monad.Free.Church.F FreeGame.UI.UI) a
+  {- Arity: 2, Strictness: <L,U><L,U>, Inline: INLINE (sat-args=1),
+     Unfolding: InlineRule (1, False, False)
+                (\ @ a
+                   (a5 :: GHC.Types.Double)
+                   (eta1 :: Control.Monad.Trans.Iter.IterT
+                              (Control.Monad.Free.Church.F FreeGame.UI.UI) a) ->
+                 Control.Monad.Trans.Iter.hoistIterT
+                   @ (Control.Monad.Free.Church.F FreeGame.UI.UI)
+                   @ (Control.Monad.Free.Church.F FreeGame.UI.UI)
+                   @ a
+                   (Control.Monad.Free.Church.$fMonadF @ FreeGame.UI.UI)
+                   (\ @ a6 -> Main.$s$fAffineF_$s$fAffineF_$crotateD @ a6 a5)
+                   eta1) -}
+c1f9062143b5dce6a1e966f02b2b9d62
+  $s$fAffineIterT_$s$fAffineIterT_$crotateR ::
+    GHC.Types.Double
+    -> Control.Monad.Trans.Iter.IterT
+         (Control.Monad.Free.Church.F FreeGame.UI.UI) a
+    -> Control.Monad.Trans.Iter.IterT
+         (Control.Monad.Free.Church.F FreeGame.UI.UI) a
+  {- Arity: 2, Strictness: <L,U><L,U>, Inline: INLINE (sat-args=1),
+     Unfolding: InlineRule (1, False, False)
+                (\ @ a
+                   (a5 :: GHC.Types.Double)
+                   (eta1 :: Control.Monad.Trans.Iter.IterT
+                              (Control.Monad.Free.Church.F FreeGame.UI.UI) a) ->
+                 Control.Monad.Trans.Iter.hoistIterT
+                   @ (Control.Monad.Free.Church.F FreeGame.UI.UI)
+                   @ (Control.Monad.Free.Church.F FreeGame.UI.UI)
+                   @ a
+                   (Control.Monad.Free.Church.$fMonadF @ FreeGame.UI.UI)
+                   (\ @ a6 -> Main.$s$fAffineF_$s$fAffineF_$crotateR @ a6 a5)
+                   eta1) -}
+b8653b90e882e3741233bf812ec70ed4
+  $s$fAffineIterT_$s$fAffineIterT_$cscale ::
+    FreeGame.Types.Vec2
+    -> Control.Monad.Trans.Iter.IterT
+         (Control.Monad.Free.Church.F FreeGame.UI.UI) a
+    -> Control.Monad.Trans.Iter.IterT
+         (Control.Monad.Free.Church.F FreeGame.UI.UI) a
+  {- Arity: 2, Strictness: <L,U><L,U>, Inline: INLINE (sat-args=1),
+     Unfolding: InlineRule (1, False, False)
+                (\ @ a
+                   (a5 :: FreeGame.Types.Vec2)
+                   (eta1 :: Control.Monad.Trans.Iter.IterT
+                              (Control.Monad.Free.Church.F FreeGame.UI.UI) a) ->
+                 Control.Monad.Trans.Iter.hoistIterT
+                   @ (Control.Monad.Free.Church.F FreeGame.UI.UI)
+                   @ (Control.Monad.Free.Church.F FreeGame.UI.UI)
+                   @ a
+                   (Control.Monad.Free.Church.$fMonadF @ FreeGame.UI.UI)
+                   (\ @ a6 -> Main.$s$fAffineF_$s$fAffineF_$cscale @ a6 a5)
+                   eta1) -}
+f633c37bec1980f08430f25c817a11d1
+  $s$fAffineIterT_$s$fAffineIterT_$ctranslate ::
+    FreeGame.Types.Vec2
+    -> Control.Monad.Trans.Iter.IterT
+         (Control.Monad.Free.Church.F FreeGame.UI.UI) a
+    -> Control.Monad.Trans.Iter.IterT
+         (Control.Monad.Free.Church.F FreeGame.UI.UI) a
+  {- Arity: 2, Strictness: <L,U><L,U>, Inline: INLINE (sat-args=1),
+     Unfolding: InlineRule (1, False, False)
+                (\ @ a
+                   (a5 :: FreeGame.Types.Vec2)
+                   (eta1 :: Control.Monad.Trans.Iter.IterT
+                              (Control.Monad.Free.Church.F FreeGame.UI.UI) a) ->
+                 Control.Monad.Trans.Iter.hoistIterT
+                   @ (Control.Monad.Free.Church.F FreeGame.UI.UI)
+                   @ (Control.Monad.Free.Church.F FreeGame.UI.UI)
+                   @ a
+                   (Control.Monad.Free.Church.$fMonadF @ FreeGame.UI.UI)
+                   (\ @ a6 -> Main.$s$fAffineF_$s$fAffineF_$ctranslate @ a6 a5)
+                   eta1) -}
+e8f451982e56811e346b62454b3d908a
+  $s$fAffineIterT_$s$fFunctorIterT ::
+    GHC.Base.Functor
+      (Control.Monad.Trans.Iter.IterT
+         (Control.Monad.Free.Church.F FreeGame.UI.UI))
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (Control.Monad.Trans.Iter.IterT
+                       (Control.Monad.Free.Church.F FreeGame.UI.UI))
+                  (Control.Monad.Trans.Iter.$fAlternativeIterT_$cfmap
+                     @ (Control.Monad.Free.Church.F FreeGame.UI.UI)
+                     (Control.Monad.Free.Church.$fMonadF @ FreeGame.UI.UI))
+                  Main.$s$fAffineIterT_$s$fFunctorIterT_$c<$ -}
+b8259b63faab7d6c61cc1d20ad43ae3b
+  $s$fAffineIterT_$s$fFunctorIterT_$c<$ ::
+    a
+    -> Control.Monad.Trans.Iter.IterT
+         (Control.Monad.Free.Church.F FreeGame.UI.UI) b
+    -> Control.Monad.Trans.Iter.IterT
+         (Control.Monad.Free.Church.F FreeGame.UI.UI) a
+  {- Arity: 2, Strictness: <L,U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a
+                   @ b
+                   (eta1 :: a)
+                   (eta2 :: Control.Monad.Trans.Iter.IterT
+                              (Control.Monad.Free.Church.F FreeGame.UI.UI) b) ->
+                 Control.Monad.Trans.Iter.$fAlternativeIterT_$cfmap
+                   @ (Control.Monad.Free.Church.F FreeGame.UI.UI)
+                   (Control.Monad.Free.Church.$fMonadF @ FreeGame.UI.UI)
+                   @ b
+                   @ a
+                   (\ (ds :: b) -> eta1)
+                   eta2) -}
 88f90124b1b09a50edd27695fa769376
   $s$fAlternativeIterT_$c>>= ::
     Control.Monad.Trans.Iter.IterT
@@ -266,7 +553,25 @@ import  -/  random-1.1@random-1.1-54KmMHXjttlERYcr1mvsAe:System.Random 12e582ce6
                                             (Control.Monad.Free.Church.F FreeGame.UI.UI) a)>_R))
                             (Sym (Control.Monad.Trans.Iter.N:IterT[0]
                                       <Control.Monad.Free.Church.F FreeGame.UI.UI>_N <a>_N))) -}
-bbba66f1fb16c536751dd1321c830806
+4776faea7f4f238842810e79c4d95f24
+  $s$fMonadFreefF ::
+    Control.Monad.Free.Class.MonadFree
+      FreeGame.UI.UI (Control.Monad.Free.Church.F FreeGame.UI.UI)
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ FreeGame.UI.UI
+                  @ (Control.Monad.Free.Church.F FreeGame.UI.UI)
+                  Main.$s$fMonadFreefF_$s$fMonadFreefF_$cp1MonadFree
+                  (Control.Monad.Free.Church.$fMonadFreefF_$cwrap
+                     @ FreeGame.UI.UI
+                     FreeGame.UI.$fFunctorUI) -}
+d8593b4026ed6bce5e96316c7ea4ff13
+  $s$fMonadFreefF_$s$fMonadFreefF_$cp1MonadFree ::
+    GHC.Base.Monad (Control.Monad.Free.Church.F FreeGame.UI.UI)
+  {- Strictness: m,
+     Unfolding: InlineRule (0, True, True)
+                (Control.Monad.Free.Church.$fMonadF @ FreeGame.UI.UI) -}
+9f8be0c298f9ce865a1491d8d30a2da2
   $s$fMonadIOIterT ::
     Control.Monad.IO.Class.MonadIO
       (Control.Monad.Trans.Iter.IterT
@@ -275,19 +580,17 @@ bbba66f1fb16c536751dd1321c830806
      Unfolding: DFun:.
                   @ (Control.Monad.Trans.Iter.IterT
                        (Control.Monad.Free.Church.F FreeGame.UI.UI))
-                  Main.$s$fMonadIOIterT_$s$fMonadIOIterT_$cp1MonadIO
+                  Main.$s$fMonadIOIterT1
                   (Control.Monad.Trans.Iter.$fMonadIOIterT_$cliftIO
                      @ (Control.Monad.Free.Church.F FreeGame.UI.UI)
                      FreeGame.$fMonadIOF) -}
-8aef45e18724ac8f65d71ee5d6a579e0
-  $s$fMonadIOIterT_$s$fMonadIOIterT_$cp1MonadIO ::
-    GHC.Base.Monad
-      (Control.Monad.Trans.Iter.IterT
-         (Control.Monad.Free.Church.F FreeGame.UI.UI))
+953d38aeb9bc75132f6a8fa99cc21959
+  $s$fMonadIOIterT1 ::
+    GHC.Base.Monad (Control.Monad.Trans.Iter.IterT FreeGame.UI.Frame)
   {- Strictness: m,
      Unfolding: InlineRule (0, True, True)
                 Main.$s$fMonadIOIterT_$s$fMonadIterT -}
-a47338f6db6d84a904b72b8373008351
+538e5d159c327cb7bdf3564ac2b49c88
   $s$fMonadIOIterT_$s$fMonadIterT ::
     GHC.Base.Monad
       (Control.Monad.Trans.Iter.IterT
@@ -344,7 +647,7 @@ a47338f6db6d84a904b72b8373008351
                             (Sym (Control.Monad.Trans.Iter.N:IterT[0]
                                       <Control.Monad.Free.Church.F FreeGame.UI.UI>_N <a>_N)))
                   Main.$s$fMonadIOIterT_$s$fMonadIterT_$cfail -}
-a0f8068ac75d6a98656bfc48ba53d046
+72f5d1b7fae2f9dd7224479e30f1c087
   $s$fMonadIOIterT_$s$fMonadIterT_$c>> ::
     Control.Monad.Trans.Iter.IterT
       (Control.Monad.Free.Church.F FreeGame.UI.UI) a
@@ -360,8 +663,8 @@ a0f8068ac75d6a98656bfc48ba53d046
                    @ b
                    (m1 :: Control.Monad.Trans.Iter.IterT
                             (Control.Monad.Free.Church.F FreeGame.UI.UI) a)
-                   (k :: Control.Monad.Trans.Iter.IterT
-                           (Control.Monad.Free.Church.F FreeGame.UI.UI) b)
+                   (k1 :: Control.Monad.Trans.Iter.IterT
+                            (Control.Monad.Free.Church.F FreeGame.UI.UI) b)
                    @ r
                    (eta1 :: Data.Either.Either
                               b
@@ -369,7 +672,7 @@ a0f8068ac75d6a98656bfc48ba53d046
                                  (Control.Monad.Free.Church.F FreeGame.UI.UI) b)
                             -> r)
                    (eta2 :: FreeGame.UI.UI r -> r) ->
-                 (Main.$s$fAlternativeIterT_$c>>= @ a @ b m1 (\ (ds :: a) -> k))
+                 (Main.$s$fAlternativeIterT_$c>>= @ a @ b m1 (\ (ds :: a) -> k1))
                    `cast`
                  (Trans
                       (Control.Monad.Trans.Iter.N:IterT[0]
@@ -413,9 +716,280 @@ a0f8068ac75d6a98656bfc48ba53d046
                    @ a
                    Data.Functor.Identity.$fMonadIdentity
                    Main.$s$fMonadFreeIdentityIterT) -}
+49ce685096f487288198ef8a74013c7b
+  $s$fPicture2DF ::
+    FreeGame.Class.Picture2D
+      (Control.Monad.Free.Church.F FreeGame.UI.UI)
+  {- HasNoCafRefs, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (Control.Monad.Free.Church.F FreeGame.UI.UI)
+                  Main.$s$fPicture2DF_$s$fPicture2DF_$cp1Picture2D
+                  Main.$s$fPicture2DF_$s$fPicture2DF_$cbitmap
+                  Main.$s$fPicture2DF_$s$fPicture2DF_$cbitmapOnce
+                  (FreeGame.Instances.$fPicture2DF_$cline
+                     @ FreeGame.UI.UI
+                     FreeGame.UI.$fPicture2DUI
+                     FreeGame.UI.$fFunctorUI)
+                  (FreeGame.Instances.$fPicture2DF_$cpolygon
+                     @ FreeGame.UI.UI
+                     FreeGame.UI.$fPicture2DUI
+                     FreeGame.UI.$fFunctorUI)
+                  (FreeGame.Instances.$fPicture2DF_$cpolygonOutline
+                     @ FreeGame.UI.UI
+                     FreeGame.UI.$fPicture2DUI
+                     FreeGame.UI.$fFunctorUI)
+                  (FreeGame.Instances.$fPicture2DF_$ccircle
+                     @ FreeGame.UI.UI
+                     FreeGame.UI.$fPicture2DUI
+                     FreeGame.UI.$fFunctorUI)
+                  (FreeGame.Instances.$fPicture2DF_$ccircleOutline
+                     @ FreeGame.UI.UI
+                     FreeGame.UI.$fPicture2DUI
+                     FreeGame.UI.$fFunctorUI)
+                  (FreeGame.Instances.$fPicture2DF_$cthickness
+                     @ FreeGame.UI.UI
+                     FreeGame.UI.$fPicture2DUI
+                     FreeGame.UI.$fFunctorUI)
+                  Main.$s$fPicture2DF_$s$fPicture2DF_$ccolor
+                  Main.$s$fPicture2DF_$s$fPicture2DF_$cblendMode -}
+4a4156e100c8ac720a9fb8dd64d2f0bc
+  $s$fPicture2DF_$s$fPicture2DF_$cbitmap ::
+    FreeGame.Data.Bitmap.Bitmap
+    -> Control.Monad.Free.Church.F FreeGame.UI.UI ()
+  {- Arity: 3, HasNoCafRefs, Strictness: <L,U><L,U><C(S),U>,
+     Inline: INLINE (sat-args=1),
+     Unfolding: InlineRule (1, False, False)
+                (\ (b :: FreeGame.Data.Bitmap.Bitmap) ->
+                 Control.Monad.Free.Class.liftF
+                   @ FreeGame.UI.UI
+                   @ (Control.Monad.Free.Church.F FreeGame.UI.UI)
+                   @ ()
+                   FreeGame.UI.$fFunctorUI
+                   Main.$s$fMonadFreefF
+                   (FreeGame.UI.$fPicture2DUI_$cbitmap b)) -}
+4555961c8c62c1e751d4504f449094a2
+  $s$fPicture2DF_$s$fPicture2DF_$cbitmapOnce ::
+    FreeGame.Data.Bitmap.Bitmap
+    -> Control.Monad.Free.Church.F FreeGame.UI.UI ()
+  {- Arity: 3, HasNoCafRefs, Strictness: <L,U><L,U><C(S),U>,
+     Inline: INLINE (sat-args=1),
+     Unfolding: InlineRule (1, False, False)
+                (\ (b :: FreeGame.Data.Bitmap.Bitmap) ->
+                 Control.Monad.Free.Class.liftF
+                   @ FreeGame.UI.UI
+                   @ (Control.Monad.Free.Church.F FreeGame.UI.UI)
+                   @ ()
+                   FreeGame.UI.$fFunctorUI
+                   Main.$s$fMonadFreefF
+                   (FreeGame.UI.$fPicture2DUI_$cbitmapOnce b)) -}
+be05e8da7b1bce719f596b604669a726
+  $s$fPicture2DF_$s$fPicture2DF_$cblendMode ::
+    FreeGame.Types.BlendMode
+    -> Control.Monad.Free.Church.F FreeGame.UI.UI a
+    -> Control.Monad.Free.Church.F FreeGame.UI.UI a
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <L,U><C(C(S)),1*C1(C1(U))><L,U><L,C(U)>,
+     Inline: INLINE (sat-args=1),
+     Unfolding: InlineRule (1, False, False)
+                (\ @ a
+                   (m1 :: FreeGame.Types.BlendMode)
+                   (eta1 :: Control.Monad.Free.Church.F FreeGame.UI.UI a)
+                   @ r
+                   (eta2 :: a -> r)
+                   (eta3 :: FreeGame.UI.UI r -> r) ->
+                 (Control.Monad.Free.Church.hoistF
+                    @ FreeGame.UI.UI
+                    @ FreeGame.UI.UI
+                    @ a
+                    (\ @ x -> FreeGame.UI.$fPicture2DUI_$cblendMode @ x m1)
+                    eta1)
+                   `cast`
+                 (Control.Monad.Free.Church.N:F[0] <FreeGame.UI.UI>_R <a>_R)
+                   @ r
+                   eta2
+                   eta3)
+                  `cast`
+                (forall (a :: <*>_N).
+                 <FreeGame.Types.BlendMode>_R
+                 ->_R <Control.Monad.Free.Church.F FreeGame.UI.UI a>_R
+                 ->_R Sym (Control.Monad.Free.Church.N:F[0]
+                               <FreeGame.UI.UI>_R <a>_R)) -}
+7819c783a4652422d68231a9a2235f41
+  $s$fPicture2DF_$s$fPicture2DF_$ccolor ::
+    Data.Color.Color GHC.Types.Float
+    -> Control.Monad.Free.Church.F FreeGame.UI.UI a
+    -> Control.Monad.Free.Church.F FreeGame.UI.UI a
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <L,U><C(C(S)),1*C1(C1(U))><L,U><L,C(U)>,
+     Inline: INLINE (sat-args=1),
+     Unfolding: InlineRule (1, False, False)
+                (\ @ a
+                   (k1 :: Data.Color.Color GHC.Types.Float)
+                   (eta1 :: Control.Monad.Free.Church.F FreeGame.UI.UI a)
+                   @ r
+                   (eta2 :: a -> r)
+                   (eta3 :: FreeGame.UI.UI r -> r) ->
+                 (Control.Monad.Free.Church.hoistF
+                    @ FreeGame.UI.UI
+                    @ FreeGame.UI.UI
+                    @ a
+                    (\ @ x -> FreeGame.UI.$fPicture2DUI_$ccolor @ x k1)
+                    eta1)
+                   `cast`
+                 (Control.Monad.Free.Church.N:F[0] <FreeGame.UI.UI>_R <a>_R)
+                   @ r
+                   eta2
+                   eta3)
+                  `cast`
+                (forall (a :: <*>_N).
+                 <Data.Color.Color GHC.Types.Float>_R
+                 ->_R <Control.Monad.Free.Church.F FreeGame.UI.UI a>_R
+                 ->_R Sym (Control.Monad.Free.Church.N:F[0]
+                               <FreeGame.UI.UI>_R <a>_R)) -}
+626570b6a59b4332456065448346c606
+  $s$fPicture2DF_$s$fPicture2DF_$cp1Picture2D ::
+    FreeGame.Class.Affine (Control.Monad.Free.Church.F FreeGame.UI.UI)
+  {- Strictness: m,
+     Unfolding: InlineRule (0, True, True) Main.$s$fAffineF -}
+295b7005be540e37be651262b994eae7
+  $s$fPicture2DIterT ::
+    FreeGame.Class.Picture2D
+      (Control.Monad.Trans.Iter.IterT
+         (Control.Monad.Free.Church.F FreeGame.UI.UI))
+  {- Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (Control.Monad.Trans.Iter.IterT
+                       (Control.Monad.Free.Church.F FreeGame.UI.UI))
+                  Main.$s$fPicture2DIterT_$s$fPicture2DIterT_$cp1Picture2D
+                  (FreeGame.Instances.$fPicture2DIterT_$cbitmap
+                     @ (Control.Monad.Free.Church.F FreeGame.UI.UI)
+                     Main.$s$fPicture2DIterT1
+                     (Control.Monad.Free.Church.$fMonadF @ FreeGame.UI.UI))
+                  (FreeGame.Instances.$fPicture2DIterT_$cbitmapOnce
+                     @ (Control.Monad.Free.Church.F FreeGame.UI.UI)
+                     Main.$s$fPicture2DIterT1
+                     (Control.Monad.Free.Church.$fMonadF @ FreeGame.UI.UI))
+                  (FreeGame.Instances.$fPicture2DIterT_$cline
+                     @ (Control.Monad.Free.Church.F FreeGame.UI.UI)
+                     Main.$s$fPicture2DIterT1
+                     (Control.Monad.Free.Church.$fMonadF @ FreeGame.UI.UI))
+                  (FreeGame.Instances.$fPicture2DIterT_$cpolygon
+                     @ (Control.Monad.Free.Church.F FreeGame.UI.UI)
+                     Main.$s$fPicture2DIterT1
+                     (Control.Monad.Free.Church.$fMonadF @ FreeGame.UI.UI))
+                  (FreeGame.Instances.$fPicture2DIterT_$cpolygonOutline
+                     @ (Control.Monad.Free.Church.F FreeGame.UI.UI)
+                     Main.$s$fPicture2DIterT1
+                     (Control.Monad.Free.Church.$fMonadF @ FreeGame.UI.UI))
+                  (FreeGame.Instances.$fPicture2DIterT_$ccircle
+                     @ (Control.Monad.Free.Church.F FreeGame.UI.UI)
+                     Main.$s$fPicture2DIterT1
+                     (Control.Monad.Free.Church.$fMonadF @ FreeGame.UI.UI))
+                  (FreeGame.Instances.$fPicture2DIterT_$ccircleOutline
+                     @ (Control.Monad.Free.Church.F FreeGame.UI.UI)
+                     Main.$s$fPicture2DIterT1
+                     (Control.Monad.Free.Church.$fMonadF @ FreeGame.UI.UI))
+                  (FreeGame.Instances.$fPicture2DIterT_$cthickness
+                     @ (Control.Monad.Free.Church.F FreeGame.UI.UI)
+                     Main.$s$fPicture2DIterT1
+                     (Control.Monad.Free.Church.$fMonadF @ FreeGame.UI.UI))
+                  Main.$s$fPicture2DIterT_$s$fPicture2DIterT_$ccolor
+                  Main.$s$fPicture2DIterT_$s$fPicture2DIterT_$cblendMode -}
+6990c28485f337838eec48f538555659
+  $s$fPicture2DIterT1 ::
+    FreeGame.Class.Picture2D
+      (Control.Monad.Free.Church.F FreeGame.UI.UI)
+  {- Unfolding: InlineRule (0, True, True) Main.$s$fPicture2DF -}
+829fd11e293e11a3246a5f366bbedf57
+  $s$fPicture2DIterT_$s$fPicture2DIterT_$cblendMode ::
+    FreeGame.Types.BlendMode
+    -> Control.Monad.Trans.Iter.IterT
+         (Control.Monad.Free.Church.F FreeGame.UI.UI) a
+    -> Control.Monad.Trans.Iter.IterT
+         (Control.Monad.Free.Church.F FreeGame.UI.UI) a
+  {- Arity: 2, Strictness: <L,U><L,U>, Inline: INLINE (sat-args=1),
+     Unfolding: InlineRule (1, False, False)
+                (\ @ a
+                   (m1 :: FreeGame.Types.BlendMode)
+                   (eta1 :: Control.Monad.Trans.Iter.IterT
+                              (Control.Monad.Free.Church.F FreeGame.UI.UI) a) ->
+                 Control.Monad.Trans.Iter.hoistIterT
+                   @ (Control.Monad.Free.Church.F FreeGame.UI.UI)
+                   @ (Control.Monad.Free.Church.F FreeGame.UI.UI)
+                   @ a
+                   (Control.Monad.Free.Church.$fMonadF @ FreeGame.UI.UI)
+                   (\ @ a5 -> Main.$s$fPicture2DF_$s$fPicture2DF_$cblendMode @ a5 m1)
+                   eta1) -}
+133e0de1aff080bf303cac775240d7dc
+  $s$fPicture2DIterT_$s$fPicture2DIterT_$ccolor ::
+    Data.Color.Color GHC.Types.Float
+    -> Control.Monad.Trans.Iter.IterT
+         (Control.Monad.Free.Church.F FreeGame.UI.UI) a
+    -> Control.Monad.Trans.Iter.IterT
+         (Control.Monad.Free.Church.F FreeGame.UI.UI) a
+  {- Arity: 2, Strictness: <L,U><L,U>, Inline: INLINE (sat-args=1),
+     Unfolding: InlineRule (1, False, False)
+                (\ @ a
+                   (k1 :: Data.Color.Color GHC.Types.Float)
+                   (eta1 :: Control.Monad.Trans.Iter.IterT
+                              (Control.Monad.Free.Church.F FreeGame.UI.UI) a) ->
+                 Control.Monad.Trans.Iter.hoistIterT
+                   @ (Control.Monad.Free.Church.F FreeGame.UI.UI)
+                   @ (Control.Monad.Free.Church.F FreeGame.UI.UI)
+                   @ a
+                   (Control.Monad.Free.Church.$fMonadF @ FreeGame.UI.UI)
+                   (\ @ a5 -> Main.$s$fPicture2DF_$s$fPicture2DF_$ccolor @ a5 k1)
+                   eta1) -}
+9dd74ebb55531831ef0add212b726363
+  $s$fPicture2DIterT_$s$fPicture2DIterT_$cp1Picture2D ::
+    FreeGame.Class.Affine
+      (Control.Monad.Trans.Iter.IterT
+         (Control.Monad.Free.Church.F FreeGame.UI.UI))
+  {- Strictness: m,
+     Unfolding: InlineRule (0, True, True) Main.$s$fAffineIterT -}
 1a1be14a433b070656662e66f284db99
   $sfromList :: [(Cards.Card, a)] -> Data.Map.Base.Map Cards.Card a
   {- Arity: 1, Strictness: <S,1*U> -}
+d4948ca768a1440d6937de26e8d4f4e0
+  $stext3 ::
+    FreeGame.Internal.Finalizer.FinalizerT GHC.Types.IO a
+    -> forall r.
+       (Data.Either.Either
+          a
+          (Control.Monad.Trans.Iter.IterT
+             (Control.Monad.Free.Church.F FreeGame.UI.UI) a)
+        -> r)
+       -> (FreeGame.UI.UI r -> r) -> r
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,C(U)><L,C(U)><C(S),1*C1(U)>,
+     Unfolding: (\ @ a
+                   (eta1 :: FreeGame.Internal.Finalizer.FinalizerT GHC.Types.IO a)
+                   @ r
+                   (eta2 :: Data.Either.Either
+                              a
+                              (Control.Monad.Trans.Iter.IterT
+                                 (Control.Monad.Free.Church.F FreeGame.UI.UI) a)
+                            -> r)
+                   (eta3 :: FreeGame.UI.UI r -> r) ->
+                 eta3
+                   (FreeGame.UI.FromFinalizer
+                      @ r
+                      (\ @ r1 (p :: r -> GHC.Types.IO r1) ->
+                       eta1
+                         `cast`
+                       (FreeGame.Internal.Finalizer.N:FinalizerT[0]
+                            <GHC.Types.IO>_R <a>_R)
+                         @ r1
+                         (\ (x :: a) ->
+                          p (eta2
+                               (Data.Either.Left
+                                  @ a
+                                  @ (Control.Monad.Trans.Iter.IterT
+                                       (Control.Monad.Free.Church.F FreeGame.UI.UI) a)
+                                  x))))
+                        `cast`
+                      (Sym (FreeGame.Internal.Finalizer.N:FinalizerT[0]
+                                <GHC.Types.IO>_R <r>_R)))) -}
 5a52910d2203ecfa8e8461cc597116a4
   $sunless1 ::
     (Data.Either.Either
@@ -459,14 +1033,17 @@ d6831ef04cb9301b090dfae6f7bb7ec7
     -> Data.Map.Base.Map Cards.Card a1
     -> Data.Map.Base.Map Cards.Card a1
   {- Arity: 4, Strictness: <L,U(U)><L,U><L,U><S,1*U>, Inline: [0] -}
-11363cfd8014fc80fee8219a53401431
+b1919e71c3e717fd7f107dc7332f46a1
   $wupdate ::
-    [Cards.Card]
+    FreeGame.Data.Font.Font
+    -> [Cards.Card]
     -> Data.Map.Base.Map Cards.Card FreeGame.Data.Bitmap.Bitmap
     -> FreeGame.Data.Bitmap.Bitmap
     -> Control.Monad.Trans.Iter.IterT
          (Control.Monad.Free.Church.F FreeGame.UI.UI) ()
-  {- Arity: 3, Strictness: <L,U><L,U><L,U>, Inline: [0] -}
+  {- Arity: 4,
+     Strictness: <L,U(U(U),U(U(U),U(U)),A,U(U))><L,U><L,U><L,U>,
+     Inline: [0] -}
 5f8cc19ecfd85758d8ecaaf784182639
   add0str :: GHC.Base.String -> GHC.Base.String
   {- Arity: 1, HasNoCafRefs, Strictness: <S,U>,
@@ -478,14 +1055,14 @@ d6831ef04cb9301b090dfae6f7bb7ec7
 0854d3518803f6000f9dca6fe4880c96
   add0str1 :: GHC.Types.Char
   {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.C# '0'#) -}
-f0382ec7670b59355dee88c83be36b9c
+453179aa75317658059965ae038d727c
   main :: GHC.Types.IO (GHC.Base.Maybe ())
   {- Arity: 1, Strictness: <S,U>,
      Unfolding: InlineRule (0, True, True)
                 Main.main1
                   `cast`
                 (Sym (GHC.Types.N:IO[0] <GHC.Base.Maybe ()>_R)) -}
-bca59da563ef1ec45ce36a33edcf59b9
+cdae5456e46fc493c792593d301eaf20
   main1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, GHC.Base.Maybe () #)
@@ -511,7 +1088,7 @@ bca59da563ef1ec45ce36a33edcf59b9
                    1200.0##
                    800.0##
                    (let {
-                      lvl23 :: [Cards.Card]
+                      lvl39 :: [Cards.Card]
                       = Data.OldList.sortBy
                           @ Cards.Card
                           Cards.$fOrdCard_$ccompare
@@ -520,53 +1097,10 @@ bca59da563ef1ec45ce36a33edcf59b9
                              5#
                              (Cards.shuffleCard Cards.allCards b1))
                     } in
-                    let {
-                      lvl24 :: FreeGame.Data.Bitmap.Bitmap
-                               -> forall r.
-                                  (Data.Either.Either
-                                     ()
-                                     (Control.Monad.Trans.Iter.IterT
-                                        (Control.Monad.Free.Church.F FreeGame.UI.UI) ())
-                                   -> r)
-                                  -> (FreeGame.UI.UI r -> r) -> r
-                        {- Arity: 3 -}
-                      = \ (back :: FreeGame.Data.Bitmap.Bitmap)
-                          @ r
-                          (eta1 :: Data.Either.Either
-                                     ()
-                                     (Control.Monad.Trans.Iter.IterT
-                                        (Control.Monad.Free.Church.F FreeGame.UI.UI) ())
-                                   -> r)[OneShot]
-                          (eta2 :: FreeGame.UI.UI r -> r)[OneShot] ->
-                        (Main.$s$fAlternativeIterT_$c>>=
-                           @ [FreeGame.Data.Bitmap.Bitmap]
-                           @ ()
-                           Main.main7
-                           (\ (cards :: [FreeGame.Data.Bitmap.Bitmap]) ->
-                            Main.$wupdate
-                              lvl23
-                              (Main.$sfromList
-                                 @ FreeGame.Data.Bitmap.Bitmap
-                                 (Cards.tupleCards cards Cards.Clover Main.main6))
-                              back))
-                          `cast`
-                        (Trans
-                             (Control.Monad.Trans.Iter.N:IterT[0]
-                                  <Control.Monad.Free.Church.F FreeGame.UI.UI>_N <()>_N)
-                             (Control.Monad.Free.Church.N:F[0]
-                                  <FreeGame.UI.UI>_R
-                                  <Data.Either.Either
-                                     ()
-                                     (Control.Monad.Trans.Iter.IterT
-                                        (Control.Monad.Free.Church.F FreeGame.UI.UI) ())>_R))
-                          @ r
-                          eta1
-                          eta2
-                    } in
                     Main.$s$fAlternativeIterT_$c>>=
                       @ FreeGame.Data.Font.Font
                       @ ()
-                      Main.main4
+                      Main.main19
                       (\ (font :: FreeGame.Data.Font.Font)
                          @ r
                          (eta1 :: Data.Either.Either
@@ -578,8 +1112,40 @@ bca59da563ef1ec45ce36a33edcf59b9
                        (Main.$s$fAlternativeIterT_$c>>=
                           @ FreeGame.Data.Bitmap.Bitmap
                           @ ()
-                          Main.main2
-                          lvl24
+                          Main.main17
+                          (\ (back :: FreeGame.Data.Bitmap.Bitmap)
+                             @ r1
+                             (eta3 :: Data.Either.Either
+                                        ()
+                                        (Control.Monad.Trans.Iter.IterT
+                                           (Control.Monad.Free.Church.F FreeGame.UI.UI) ())
+                                      -> r1)[OneShot]
+                             (eta4 :: FreeGame.UI.UI r1 -> r1)[OneShot] ->
+                           (Main.$s$fAlternativeIterT_$c>>=
+                              @ [FreeGame.Data.Bitmap.Bitmap]
+                              @ ()
+                              Main.main3
+                              (\ (cards :: [FreeGame.Data.Bitmap.Bitmap]) ->
+                               Main.$wupdate
+                                 font
+                                 lvl39
+                                 (Main.$sfromList
+                                    @ FreeGame.Data.Bitmap.Bitmap
+                                    (Cards.tupleCards cards Cards.Clover Main.main2))
+                                 back))
+                             `cast`
+                           (Trans
+                                (Control.Monad.Trans.Iter.N:IterT[0]
+                                     <Control.Monad.Free.Church.F FreeGame.UI.UI>_N <()>_N)
+                                (Control.Monad.Free.Church.N:F[0]
+                                     <FreeGame.UI.UI>_R
+                                     <Data.Either.Either
+                                        ()
+                                        (Control.Monad.Trans.Iter.IterT
+                                           (Control.Monad.Free.Church.F FreeGame.UI.UI) ())>_R))
+                             @ r1
+                             eta3
+                             eta4)
                             `cast`
                           (<FreeGame.Data.Bitmap.Bitmap>_R
                            ->_R Trans
@@ -619,20 +1185,89 @@ bca59da563ef1ec45ce36a33edcf59b9
                                 (Sym (Control.Monad.Trans.Iter.N:IterT[0]
                                           <Control.Monad.Free.Church.F FreeGame.UI.UI>_N <()>_N))))
                    ipv } } }) -}
-90aa85cedb44c5f0bd82bc9c3cdfb5ac
-  main10 :: [GHC.IO.FilePath]
-  {- Unfolding: (Main.main13 Main.main18 Main.main11) -}
-016cc529e4ed76ef9c416fbb54467b5f
-  main11 :: [GHC.IO.FilePath]
-  {- Unfolding: (Main.main13
+f71a6824ff08d50f77e37383116eb73c
+  main10 :: [GHC.Integer.Type.Integer]
+  {- Unfolding: (GHC.Enum.enumDeltaToInteger1
                    Main.main12
+                   Main.main11) -}
+4e300da514a0e8e0e6e2567eebdf0842
+  main11 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (13) -}
+3bd5beb215d59afe3bdb7bfcba28d750
+  main12 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (1) -}
+2215e14caa24136972fbc2797bd8813d
+  main13 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# ".png"#) -}
+836aa45e85d68c3e4b7037db6fa6a612
+  main14 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "h"#) -}
+a238baa15c0c3132eb168144a2af4fff
+  main15 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "d"#) -}
+41b4b349cf3ff93826dfa1ad562ff13a
+  main16 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "c"#) -}
+f13277b15d6fc71dd31b4df61fe0bf5b
+  main17 ::
+    Control.Monad.Trans.Iter.IterT
+      FreeGame.UI.Frame FreeGame.Data.Bitmap.Bitmap
+  {- Unfolding: (FreeGame.Data.Bitmap.readBitmap
+                   @ (Control.Monad.Trans.Iter.IterT FreeGame.UI.Frame)
+                   Main.$s$fMonadIOIterT
+                   Main.main18) -}
+9f82109d87862867442bd41758e8a885
+  main18 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "asset/back.png"#) -}
+31f809f64657b55fb8d5637895d7cf64
+  main19 ::
+    Control.Monad.Trans.Iter.IterT
+      FreeGame.UI.Frame FreeGame.Data.Font.Font
+  {- Unfolding: (FreeGame.Data.Font.loadFontFromFile
+                   @ (Control.Monad.Trans.Iter.IterT FreeGame.UI.Frame)
+                   Main.$s$fMonadIOIterT
+                   Main.main20) -}
+1ec98564a36ac812b6c79628d8624773
+  main2 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 1#) -}
+7d7f1e49e07273f8e039799e3b494f91
+  main20 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "asset/VL-PGothic-Regular.ttf"#) -}
+8a737c9ac1b693e85722ac65d957fc30
+  main21 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, GHC.Base.Maybe () #)
+  {- Arity: 1,
+     Unfolding: (GHC.TopHandler.runMainIO1
+                   @ (GHC.Base.Maybe ())
+                   Main.main1
+                     `cast`
+                   (Sym (GHC.Types.N:IO[0] <GHC.Base.Maybe ()>_R))) -}
+58a2da47dae157790d4af929a14c0a47
+  main3 ::
+    Control.Monad.Trans.Iter.IterT
+      FreeGame.UI.Frame [FreeGame.Data.Bitmap.Bitmap]
+  {- Unfolding: (Main.main_go Main.main4) -}
+7bb6a88727cdafdf7e04dfd7221cea74
+  main4 :: [GHC.IO.FilePath]
+  {- Unfolding: (Main.main9 Main.main16 Main.main5) -}
+807f483f67da5eba7d67c7559e8a5400
+  main5 :: [GHC.IO.FilePath]
+  {- Unfolding: (Main.main9 Main.main15 Main.main6) -}
+dce8acf2f7f6b21d2c8b5a87a81bf688
+  main6 :: [GHC.IO.FilePath]
+  {- Unfolding: (Main.main9 Main.main14 Main.main7) -}
+46ddc52d46771cb0c4a9d3c0f0402e31
+  main7 :: [GHC.IO.FilePath]
+  {- Unfolding: (Main.main9
+                   Main.main8
                    (GHC.Types.[] @ GHC.IO.FilePath)) -}
-c87e4a100a9db76199299278fe91a0db
-  main12 :: [GHC.Types.Char]
+656738e2cec3c8a153d0ec28a10b695c
+  main8 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "s"#) -}
-60d9d17adb66fd9d0ee9d0024b25927b
-  main13 ::
-    [GHC.Types.Char] -> [GHC.IO.FilePath] -> [GHC.IO.FilePath]
+c0cc8263c1dba7a38a9b6abf87f71f3a
+  main9 :: [GHC.Types.Char] -> [GHC.IO.FilePath] -> [GHC.IO.FilePath]
   {- Arity: 2, Strictness: <L,U><L,U>,
      Unfolding: (\ (ds :: [GHC.Types.Char])
                    (ds1 :: [GHC.IO.FilePath])[OneShot] ->
@@ -658,92 +1293,22 @@ c87e4a100a9db76199299278fe91a0db
                                      s :: GHC.Base.String = GHC.Types.: @ GHC.Types.Char ww3 ww4
                                    } in
                                    case GHC.List.$wlenAcc @ GHC.Types.Char s 0# of ww1 {
-                                     DEFAULT -> GHC.Base.++ @ GHC.Types.Char s Main.main17
+                                     DEFAULT -> GHC.Base.++ @ GHC.Types.Char s Main.main13
                                      1#
                                      -> GHC.Base.++
                                           @ GHC.Types.Char
                                           (GHC.Types.: @ GHC.Types.Char Main.add0str1 s)
-                                          Main.main17 } })))
+                                          Main.main13 } })))
                             (go ys) }
                  } in
-                 go Main.main14) -}
-94c6dd819a1f15e024f2a3e03cf3a456
-  main14 :: [GHC.Integer.Type.Integer]
-  {- Unfolding: (GHC.Enum.enumDeltaToInteger1
-                   Main.main16
-                   Main.main15) -}
-2dfa0541fb7aa0ab2b5c277d116220f4
-  main15 :: GHC.Integer.Type.Integer
-  {- HasNoCafRefs, Unfolding: (13) -}
-b09ae16fc1a90cf1b4abd5dcae92f72b
-  main16 :: GHC.Integer.Type.Integer
-  {- HasNoCafRefs, Unfolding: (1) -}
-f66ae55778431fa9afa5648dcb7dfbea
-  main17 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# ".png"#) -}
-86ad5d1c79aa8b1ab973f026df2aebd8
-  main18 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "h"#) -}
-5a427cf90b11aaf7066d0fd2c177b91d
-  main19 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "d"#) -}
-5cc28d10e7bb6c35c44c49d6d28858b0
-  main2 ::
-    Control.Monad.Trans.Iter.IterT
-      FreeGame.UI.Frame FreeGame.Data.Bitmap.Bitmap
-  {- Unfolding: (FreeGame.Data.Bitmap.readBitmap
-                   @ (Control.Monad.Trans.Iter.IterT FreeGame.UI.Frame)
-                   Main.$s$fMonadIOIterT
-                   Main.main3) -}
-1e4daacbe465484b76c992c2691dcde6
-  main20 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "c"#) -}
-c393e7fa55988545a6b308aadef7dd91
-  main21 ::
-    GHC.Prim.State# GHC.Prim.RealWorld
-    -> (# GHC.Prim.State# GHC.Prim.RealWorld, GHC.Base.Maybe () #)
-  {- Arity: 1,
-     Unfolding: (GHC.TopHandler.runMainIO1
-                   @ (GHC.Base.Maybe ())
-                   Main.main1
-                     `cast`
-                   (Sym (GHC.Types.N:IO[0] <GHC.Base.Maybe ()>_R))) -}
-3e4f00eae14964ce4033cc663c5887de
-  main3 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "asset/back.png"#) -}
-bdd9314028f2b423d7346c671198c6db
-  main4 ::
-    Control.Monad.Trans.Iter.IterT
-      FreeGame.UI.Frame FreeGame.Data.Font.Font
-  {- Unfolding: (FreeGame.Data.Font.loadFontFromFile
-                   @ (Control.Monad.Trans.Iter.IterT FreeGame.UI.Frame)
-                   Main.$s$fMonadIOIterT
-                   Main.main5) -}
-38b7e34ba17e23eb172cd66841137d14
-  main5 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString#
-                   "asset/VL-PGothic-Regular.ttf"#) -}
-6eb8b1d010496f1486fd276601aca7f7
-  main6 :: GHC.Types.Int
-  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 1#) -}
-197f1b873176cd06942e4809561f88a0
-  main7 ::
-    Control.Monad.Trans.Iter.IterT
-      FreeGame.UI.Frame [FreeGame.Data.Bitmap.Bitmap]
-  {- Unfolding: (Main.main_go Main.main8) -}
-623dacb9d66bffad3dc5b8037b67d7e6
-  main8 :: [GHC.IO.FilePath]
-  {- Unfolding: (Main.main13 Main.main20 Main.main9) -}
-fb22428e86156c3f400061bd69d9203a
-  main9 :: [GHC.IO.FilePath]
-  {- Unfolding: (Main.main13 Main.main19 Main.main10) -}
+                 go Main.main10) -}
 143441f123e733d36f0b32b79649cfac
   main_go ::
     [GHC.IO.FilePath]
     -> Control.Monad.Trans.Iter.IterT
          FreeGame.UI.Frame [FreeGame.Data.Bitmap.Bitmap]
   {- Arity: 1, Strictness: <S,1*U> -}
-31644449ff001fddad7cfe4fa11d181c
+764e57fb42430661fe48708b81c7f3cd
   update ::
     FreeGame.Data.Font.Font
     -> [Cards.Card]
@@ -751,7 +1316,8 @@ fb22428e86156c3f400061bd69d9203a
     -> Data.Map.Base.Map Cards.Card FreeGame.Data.Bitmap.Bitmap
     -> FreeGame.Data.Bitmap.Bitmap
     -> FreeGame.UI.Game ()
-  {- Arity: 5, Strictness: <L,A><L,U><L,A><L,U><L,U>,
+  {- Arity: 5,
+     Strictness: <L,U(U(U),U(U(U),U(U)),A,U(U))><L,U><L,A><L,U><L,U>,
      Inline: INLINE[0],
      Unfolding: InlineRule (5, True, True)
                 (\ (w :: FreeGame.Data.Font.Font)
@@ -759,7 +1325,97 @@ fb22428e86156c3f400061bd69d9203a
                    (w2 :: [FreeGame.Data.Bitmap.Bitmap])
                    (w3 :: Data.Map.Base.Map Cards.Card FreeGame.Data.Bitmap.Bitmap)
                    (w4 :: FreeGame.Data.Bitmap.Bitmap) ->
-                 Main.$wupdate w1 w3 w4) -}
+                 Main.$wupdate w w1 w3 w4) -}
+"SPEC/Main $fAffineF @ UI" [ALWAYS] forall ($dAffine :: FreeGame.Class.Affine
+                                                          FreeGame.UI.UI)
+  FreeGame.Instances.$fAffineF @ FreeGame.UI.UI $dAffine
+  = Main.$s$fAffineF
+"SPEC/Main $fAffineF_$cp1Affine @ UI" [ALWAYS] forall ($dAffine :: FreeGame.Class.Affine
+                                                                     FreeGame.UI.UI)
+  FreeGame.Instances.$fAffineF_$cp1Affine @ FreeGame.UI.UI $dAffine
+  = Main.$s$fAffineF_$s$fAffineF_$cp1Affine
+"SPEC/Main $fAffineF_$crotateD @ UI" [ALWAYS] forall ($dAffine :: FreeGame.Class.Affine
+                                                                    FreeGame.UI.UI)
+  FreeGame.Instances.$fAffineF_$crotateD @ FreeGame.UI.UI $dAffine
+  = Main.$s$fAffineF_$s$fAffineF_$crotateD
+"SPEC/Main $fAffineF_$crotateR @ UI" [ALWAYS] forall ($dAffine :: FreeGame.Class.Affine
+                                                                    FreeGame.UI.UI)
+  FreeGame.Instances.$fAffineF_$crotateR @ FreeGame.UI.UI $dAffine
+  = Main.$s$fAffineF_$s$fAffineF_$crotateR
+"SPEC/Main $fAffineF_$cscale @ UI" [ALWAYS] forall ($dAffine :: FreeGame.Class.Affine
+                                                                  FreeGame.UI.UI)
+  FreeGame.Instances.$fAffineF_$cscale @ FreeGame.UI.UI $dAffine
+  = Main.$s$fAffineF_$s$fAffineF_$cscale
+"SPEC/Main $fAffineF_$ctranslate @ UI" [ALWAYS] forall ($dAffine :: FreeGame.Class.Affine
+                                                                      FreeGame.UI.UI)
+  FreeGame.Instances.$fAffineF_$ctranslate @ FreeGame.UI.UI $dAffine
+  = Main.$s$fAffineF_$s$fAffineF_$ctranslate
+"SPEC/Main $fAffineIterT @ (F UI)" [ALWAYS] forall ($dAffine :: FreeGame.Class.Affine
+                                                                  (Control.Monad.Free.Church.F
+                                                                     FreeGame.UI.UI))
+                                                   ($dMonad :: GHC.Base.Monad
+                                                                 (Control.Monad.Free.Church.F
+                                                                    FreeGame.UI.UI))
+  FreeGame.Instances.$fAffineIterT @ (Control.Monad.Free.Church.F
+                                        FreeGame.UI.UI)
+                                   $dAffine
+                                   $dMonad
+  = Main.$s$fAffineIterT
+"SPEC/Main $fAffineIterT_$cp1Affine @ (F UI)" [ALWAYS] forall ($dAffine :: FreeGame.Class.Affine
+                                                                             (Control.Monad.Free.Church.F
+                                                                                FreeGame.UI.UI))
+                                                              ($dMonad :: GHC.Base.Monad
+                                                                            (Control.Monad.Free.Church.F
+                                                                               FreeGame.UI.UI))
+  FreeGame.Instances.$fAffineIterT_$cp1Affine @ (Control.Monad.Free.Church.F
+                                                   FreeGame.UI.UI)
+                                              $dAffine
+                                              $dMonad
+  = Main.$s$fAffineIterT_$s$fAffineIterT_$cp1Affine
+"SPEC/Main $fAffineIterT_$crotateD @ (F UI)" [ALWAYS] forall ($dAffine :: FreeGame.Class.Affine
+                                                                            (Control.Monad.Free.Church.F
+                                                                               FreeGame.UI.UI))
+                                                             ($dMonad :: GHC.Base.Monad
+                                                                           (Control.Monad.Free.Church.F
+                                                                              FreeGame.UI.UI))
+  FreeGame.Instances.$fAffineIterT_$crotateD @ (Control.Monad.Free.Church.F
+                                                  FreeGame.UI.UI)
+                                             $dAffine
+                                             $dMonad
+  = Main.$s$fAffineIterT_$s$fAffineIterT_$crotateD
+"SPEC/Main $fAffineIterT_$crotateR @ (F UI)" [ALWAYS] forall ($dAffine :: FreeGame.Class.Affine
+                                                                            (Control.Monad.Free.Church.F
+                                                                               FreeGame.UI.UI))
+                                                             ($dMonad :: GHC.Base.Monad
+                                                                           (Control.Monad.Free.Church.F
+                                                                              FreeGame.UI.UI))
+  FreeGame.Instances.$fAffineIterT_$crotateR @ (Control.Monad.Free.Church.F
+                                                  FreeGame.UI.UI)
+                                             $dAffine
+                                             $dMonad
+  = Main.$s$fAffineIterT_$s$fAffineIterT_$crotateR
+"SPEC/Main $fAffineIterT_$cscale @ (F UI)" [ALWAYS] forall ($dAffine :: FreeGame.Class.Affine
+                                                                          (Control.Monad.Free.Church.F
+                                                                             FreeGame.UI.UI))
+                                                           ($dMonad :: GHC.Base.Monad
+                                                                         (Control.Monad.Free.Church.F
+                                                                            FreeGame.UI.UI))
+  FreeGame.Instances.$fAffineIterT_$cscale @ (Control.Monad.Free.Church.F
+                                                FreeGame.UI.UI)
+                                           $dAffine
+                                           $dMonad
+  = Main.$s$fAffineIterT_$s$fAffineIterT_$cscale
+"SPEC/Main $fAffineIterT_$ctranslate @ (F UI)" [ALWAYS] forall ($dAffine :: FreeGame.Class.Affine
+                                                                              (Control.Monad.Free.Church.F
+                                                                                 FreeGame.UI.UI))
+                                                               ($dMonad :: GHC.Base.Monad
+                                                                             (Control.Monad.Free.Church.F
+                                                                                FreeGame.UI.UI))
+  FreeGame.Instances.$fAffineIterT_$ctranslate @ (Control.Monad.Free.Church.F
+                                                    FreeGame.UI.UI)
+                                               $dAffine
+                                               $dMonad
+  = Main.$s$fAffineIterT_$s$fAffineIterT_$ctranslate
 "SPEC/Main $fAlternativeIterT_$c>>= @ (F UI)" [ALWAYS] forall ($dMonad :: GHC.Base.Monad
                                                                             (Control.Monad.Free.Church.F
                                                                                FreeGame.UI.UI))
@@ -767,6 +1423,20 @@ fb22428e86156c3f400061bd69d9203a
                                                          FreeGame.UI.UI)
                                                     $dMonad
   = Main.$s$fAlternativeIterT_$c>>=
+"SPEC/Main $fFunctorIterT @ (F UI)" [ALWAYS] forall ($dMonad :: GHC.Base.Monad
+                                                                  (Control.Monad.Free.Church.F
+                                                                     FreeGame.UI.UI))
+  Control.Monad.Trans.Iter.$fFunctorIterT @ (Control.Monad.Free.Church.F
+                                               FreeGame.UI.UI)
+                                          $dMonad
+  = Main.$s$fAffineIterT_$s$fFunctorIterT
+"SPEC/Main $fFunctorIterT_$c<$ @ (F UI)" [ALWAYS] forall ($dMonad :: GHC.Base.Monad
+                                                                       (Control.Monad.Free.Church.F
+                                                                          FreeGame.UI.UI))
+  Control.Monad.Trans.Iter.$fFunctorIterT_$c<$ @ (Control.Monad.Free.Church.F
+                                                    FreeGame.UI.UI)
+                                               $dMonad
+  = Main.$s$fAffineIterT_$s$fFunctorIterT_$c<$
 "SPEC/Main $fMonadFreeIdentityIterT @ (F UI)" [ALWAYS] forall ($dMonad :: GHC.Base.Monad
                                                                             (Control.Monad.Free.Church.F
                                                                                FreeGame.UI.UI))
@@ -774,6 +1444,15 @@ fb22428e86156c3f400061bd69d9203a
                                                          FreeGame.UI.UI)
                                                     $dMonad
   = Main.$s$fMonadFreeIdentityIterT
+"SPEC/Main $fMonadFreefF @ UI" [ALWAYS] forall ($dFunctor1 :: GHC.Base.Functor
+                                                                FreeGame.UI.UI)
+  Control.Monad.Free.Church.$fMonadFreefF @ FreeGame.UI.UI $dFunctor1
+  = Main.$s$fMonadFreefF
+"SPEC/Main $fMonadFreefF_$cp1MonadFree @ UI" [ALWAYS] forall ($dFunctor1 :: GHC.Base.Functor
+                                                                              FreeGame.UI.UI)
+  Control.Monad.Free.Church.$fMonadFreefF_$cp1MonadFree @ FreeGame.UI.UI
+                                                        $dFunctor1
+  = Main.$s$fMonadFreefF_$s$fMonadFreefF_$cp1MonadFree
 "SPEC/Main $fMonadIOIterT @ (F UI)" [ALWAYS] forall ($dMonadIO :: Control.Monad.IO.Class.MonadIO
                                                                     (Control.Monad.Free.Church.F
                                                                        FreeGame.UI.UI))
@@ -781,13 +1460,6 @@ fb22428e86156c3f400061bd69d9203a
                                                FreeGame.UI.UI)
                                           $dMonadIO
   = Main.$s$fMonadIOIterT
-"SPEC/Main $fMonadIOIterT_$cp1MonadIO @ (F UI)" [ALWAYS] forall ($dMonadIO :: Control.Monad.IO.Class.MonadIO
-                                                                                (Control.Monad.Free.Church.F
-                                                                                   FreeGame.UI.UI))
-  Control.Monad.Trans.Iter.$fMonadIOIterT_$cp1MonadIO @ (Control.Monad.Free.Church.F
-                                                           FreeGame.UI.UI)
-                                                      $dMonadIO
-  = Main.$s$fMonadIOIterT_$s$fMonadIOIterT_$cp1MonadIO
 "SPEC/Main $fMonadIterT @ (F UI)" [ALWAYS] forall ($dMonad :: GHC.Base.Monad
                                                                 (Control.Monad.Free.Church.F
                                                                    FreeGame.UI.UI))
@@ -809,6 +1481,97 @@ fb22428e86156c3f400061bd69d9203a
                                                     FreeGame.UI.UI)
                                                $dMonad
   = Main.$s$fMonadIOIterT_$s$fMonadIterT_$cfail
+"SPEC/Main $fPicture2DF @ UI" [ALWAYS] forall ($dPicture2D :: FreeGame.Class.Picture2D
+                                                                FreeGame.UI.UI)
+                                              ($dFunctor1 :: GHC.Base.Functor FreeGame.UI.UI)
+  FreeGame.Instances.$fPicture2DF @ FreeGame.UI.UI
+                                  $dPicture2D
+                                  $dFunctor1
+  = Main.$s$fPicture2DF
+"SPEC/Main $fPicture2DF_$cbitmap @ UI" [ALWAYS] forall ($dPicture2D :: FreeGame.Class.Picture2D
+                                                                         FreeGame.UI.UI)
+                                                       ($dFunctor1 :: GHC.Base.Functor
+                                                                        FreeGame.UI.UI)
+  FreeGame.Instances.$fPicture2DF_$cbitmap @ FreeGame.UI.UI
+                                           $dPicture2D
+                                           $dFunctor1
+  = Main.$s$fPicture2DF_$s$fPicture2DF_$cbitmap
+"SPEC/Main $fPicture2DF_$cbitmapOnce @ UI" [ALWAYS] forall ($dPicture2D :: FreeGame.Class.Picture2D
+                                                                             FreeGame.UI.UI)
+                                                           ($dFunctor1 :: GHC.Base.Functor
+                                                                            FreeGame.UI.UI)
+  FreeGame.Instances.$fPicture2DF_$cbitmapOnce @ FreeGame.UI.UI
+                                               $dPicture2D
+                                               $dFunctor1
+  = Main.$s$fPicture2DF_$s$fPicture2DF_$cbitmapOnce
+"SPEC/Main $fPicture2DF_$cblendMode @ UI" [ALWAYS] forall ($dPicture2D :: FreeGame.Class.Picture2D
+                                                                            FreeGame.UI.UI)
+                                                          ($dFunctor1 :: GHC.Base.Functor
+                                                                           FreeGame.UI.UI)
+  FreeGame.Instances.$fPicture2DF_$cblendMode @ FreeGame.UI.UI
+                                              $dPicture2D
+                                              $dFunctor1
+  = Main.$s$fPicture2DF_$s$fPicture2DF_$cblendMode
+"SPEC/Main $fPicture2DF_$ccolor @ UI" [ALWAYS] forall ($dPicture2D :: FreeGame.Class.Picture2D
+                                                                        FreeGame.UI.UI)
+                                                      ($dFunctor1 :: GHC.Base.Functor
+                                                                       FreeGame.UI.UI)
+  FreeGame.Instances.$fPicture2DF_$ccolor @ FreeGame.UI.UI
+                                          $dPicture2D
+                                          $dFunctor1
+  = Main.$s$fPicture2DF_$s$fPicture2DF_$ccolor
+"SPEC/Main $fPicture2DF_$cp1Picture2D @ UI" [ALWAYS] forall ($dPicture2D :: FreeGame.Class.Picture2D
+                                                                              FreeGame.UI.UI)
+                                                            ($dFunctor1 :: GHC.Base.Functor
+                                                                             FreeGame.UI.UI)
+  FreeGame.Instances.$fPicture2DF_$cp1Picture2D @ FreeGame.UI.UI
+                                                $dPicture2D
+                                                $dFunctor1
+  = Main.$s$fPicture2DF_$s$fPicture2DF_$cp1Picture2D
+"SPEC/Main $fPicture2DIterT @ (F UI)" [ALWAYS] forall ($dPicture2D :: FreeGame.Class.Picture2D
+                                                                        (Control.Monad.Free.Church.F
+                                                                           FreeGame.UI.UI))
+                                                      ($dMonad :: GHC.Base.Monad
+                                                                    (Control.Monad.Free.Church.F
+                                                                       FreeGame.UI.UI))
+  FreeGame.Instances.$fPicture2DIterT @ (Control.Monad.Free.Church.F
+                                           FreeGame.UI.UI)
+                                      $dPicture2D
+                                      $dMonad
+  = Main.$s$fPicture2DIterT
+"SPEC/Main $fPicture2DIterT_$cblendMode @ (F UI)" [ALWAYS] forall ($dPicture2D :: FreeGame.Class.Picture2D
+                                                                                    (Control.Monad.Free.Church.F
+                                                                                       FreeGame.UI.UI))
+                                                                  ($dMonad :: GHC.Base.Monad
+                                                                                (Control.Monad.Free.Church.F
+                                                                                   FreeGame.UI.UI))
+  FreeGame.Instances.$fPicture2DIterT_$cblendMode @ (Control.Monad.Free.Church.F
+                                                       FreeGame.UI.UI)
+                                                  $dPicture2D
+                                                  $dMonad
+  = Main.$s$fPicture2DIterT_$s$fPicture2DIterT_$cblendMode
+"SPEC/Main $fPicture2DIterT_$ccolor @ (F UI)" [ALWAYS] forall ($dPicture2D :: FreeGame.Class.Picture2D
+                                                                                (Control.Monad.Free.Church.F
+                                                                                   FreeGame.UI.UI))
+                                                              ($dMonad :: GHC.Base.Monad
+                                                                            (Control.Monad.Free.Church.F
+                                                                               FreeGame.UI.UI))
+  FreeGame.Instances.$fPicture2DIterT_$ccolor @ (Control.Monad.Free.Church.F
+                                                   FreeGame.UI.UI)
+                                              $dPicture2D
+                                              $dMonad
+  = Main.$s$fPicture2DIterT_$s$fPicture2DIterT_$ccolor
+"SPEC/Main $fPicture2DIterT_$cp1Picture2D @ (F UI)" [ALWAYS] forall ($dPicture2D :: FreeGame.Class.Picture2D
+                                                                                      (Control.Monad.Free.Church.F
+                                                                                         FreeGame.UI.UI))
+                                                                    ($dMonad :: GHC.Base.Monad
+                                                                                  (Control.Monad.Free.Church.F
+                                                                                     FreeGame.UI.UI))
+  FreeGame.Instances.$fPicture2DIterT_$cp1Picture2D @ (Control.Monad.Free.Church.F
+                                                         FreeGame.UI.UI)
+                                                    $dPicture2D
+                                                    $dMonad
+  = Main.$s$fPicture2DIterT_$s$fPicture2DIterT_$cp1Picture2D
 "SPEC/Main fromList @ Card _" [ALWAYS] forall @ a
                                               ($dOrd :: GHC.Classes.Ord Cards.Card)
   Data.Map.Base.fromList @ Cards.Card @ a $dOrd = Main.$sfromList @ a

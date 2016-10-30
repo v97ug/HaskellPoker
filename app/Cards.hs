@@ -1,11 +1,14 @@
 module Cards
 ( Rank(..)
 , Card
+, getRank
+, getNum
 , allCards
 , shuffleCard
 , showCards
 , tupleCards
 , showPictCards
+-- , checkHand
 ) where
 
 import FreeGame
@@ -15,6 +18,12 @@ import Data.Maybe
 
 data Rank = Clover | Dia | Heart | Spade deriving (Eq, Ord, Enum)
 data Card = Card Int Rank deriving (Eq, Ord)
+
+getRank :: Card -> Rank
+getRank (Card _ r) = r
+
+getNum :: Card -> Int
+getNum (Card n _) = n
 
 instance Show Card where
   show (Card i Heart) = "H" ++ showCardNumber i
@@ -60,3 +69,8 @@ showPictCards (c:cs) cardsMap x
     showPictCards cs cardsMap (x + 200)
   | otherwise = showPictCards cs cardsMap (x + 200)
   where pict = Map.lookup c cardsMap
+
+-- checkHand :: [Card] -> String
+-- checkHand c = "aaa"
+-- checkHand [Card 1 r, Card 10 r, Card 11 r, Card 12 r, Card 13 r] = "royal straight flash"
+-- checkHand _ = "I'm sorry..."

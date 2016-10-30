@@ -3,6 +3,7 @@ module Main where
 import Lib
 
 import Cards
+import Hands
 
 import Data.List
 import qualified Data.Map as Map
@@ -14,7 +15,11 @@ update font myCards cards cardsMap back = do
   translate (V2 600 400) $ bitmap back
   -- showCards myCards 100 font
   showPictCards myCards cardsMap 100
-
+  (translate (V2 100 600) . color green . text font 40) "exmple"
+  let (Just hand) = toHand myCards
+  let (yaku,c) = pokerHand hand
+  (translate (V2 100 700) . color green . text font 40) $ show yaku
+  (translate (V2 100 800) . color green . text font 40) $ show c
   tick
   escape <- keyPress KeyEscape
   unless escape $ update font myCards cards cardsMap back
